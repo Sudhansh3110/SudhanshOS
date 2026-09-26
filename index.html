@@ -1,0 +1,1717 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Sudhansh Arora, AI QA portfolio as a Windows-style desktop. CV in Notepad, projects in File Explorer.">
+<meta name="theme-color" content="#EEF0FA">
+<meta property="og:title" content="SudhanshOS | Sudhansh Arora, AI QA">
+<meta property="og:description" content="Sudhansh Arora, AI QA portfolio as a Windows-style desktop. CV in Notepad, projects in File Explorer.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="../assets/sudhansh-arora.jpg">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta charset="utf-8">
+<title>SudhanshOS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ink:#14152A; --muted:#5E6178; --faint:#8C8FA6;
+  --win:rgba(248,249,252,.86); --win-solid:#FAFAFD; --pane:#F1F2F7; --line:rgba(20,21,42,.10);
+  --hover:rgba(20,21,42,.06); --press:rgba(20,21,42,.10);
+  --taskbar:rgba(240,242,249,.80); --menu:rgba(246,247,251,.92);
+  --accent:#3D2EF5; --accent-ink:#FFFFFF; --pass:#12804A; --warn:#B45309; --danger:#C4314B;
+  --wall-a:#C9D0F5; --wall-b:#EEF0FA; --icon-text:#14152A; --icon-shadow:none; --wall-c:#8E86FF; --wall-d:#FF9E7A; --wall-name:rgba(20,21,42,.06);
+  --sky-top:#F7C6B8; --sky-mid:#F2A48E; --sky-low:#E5877A; --sky-deep:#C96F6A;
+  --sky-b1:#B35E63; --sky-b1-op:.55; --sky-b2:#8E4555;
+  --sky-window:#FFD8A8; --sky-window-op:.75;
+  --sky-orb:#FFE3B8; --sky-orb-w:14%; --sky-orb-shadow:0 0 60px 20px rgba(255,227,184,.6);
+  --star-op:0; --testline-color:rgba(20,21,42,.14); --testline-pass:rgba(18,128,74,.4);
+  --shadow:0 18px 50px rgba(20,21,42,.22),0 2px 6px rgba(20,21,42,.10);
+  --ui:"Segoe UI Variable Text","Segoe UI","Instrument Sans",system-ui,sans-serif;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --mono:"JetBrains Mono","Cascadia Mono",Consolas,ui-monospace,monospace;
+  --tb:52px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ink:#ECECF4; --muted:#A0A2B8; --faint:#6E7189;
+    --win:rgba(30,32,48,.84); --win-solid:#1E2030; --pane:#181A28; --line:rgba(255,255,255,.09);
+    --hover:rgba(255,255,255,.06); --press:rgba(255,255,255,.10);
+    --taskbar:rgba(20,21,33,.80); --menu:rgba(28,30,45,.92);
+    --accent:#8B84FF; --accent-ink:#0C0D16; --pass:#3DD68C; --warn:#F5A524; --danger:#FF6B81;
+    --wall-a:#171A3A; --wall-b:#0B0C17; --icon-text:#FFFFFF; --icon-shadow:0 1px 3px rgba(0,0,0,.6); --wall-c:#4B3FE0; --wall-d:#B8503A; --wall-name:rgba(255,255,255,.05);
+    --shadow:0 18px 50px rgba(0,0,0,.55),0 2px 6px rgba(0,0,0,.3);
+    --sky-top:#141633; --sky-mid:#23255A; --sky-low:#2E2A5C; --sky-deep:#1B1840;
+    --sky-b1:#2E2A5C; --sky-b1-op:1; --sky-b2:#1B1840;
+    --sky-window:#FFD27A; --sky-window-op:1;
+    --sky-orb:#EDE9FF; --sky-orb-w:9%; --sky-orb-shadow:0 0 40px 8px rgba(237,233,255,.35);
+    --star-op:.35; --testline-color:rgba(255,255,255,.10); --testline-pass:rgba(61,214,140,.35);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ink:#ECECF4; --muted:#A0A2B8; --faint:#6E7189;
+  --win:rgba(30,32,48,.84); --win-solid:#1E2030; --pane:#181A28; --line:rgba(255,255,255,.09);
+  --hover:rgba(255,255,255,.06); --press:rgba(255,255,255,.10);
+  --taskbar:rgba(20,21,33,.80); --menu:rgba(28,30,45,.92);
+  --accent:#8B84FF; --accent-ink:#0C0D16; --pass:#3DD68C; --warn:#F5A524; --danger:#FF6B81;
+  --wall-a:#171A3A; --wall-b:#0B0C17; --icon-text:#FFFFFF; --icon-shadow:0 1px 3px rgba(0,0,0,.6); --wall-c:#4B3FE0; --wall-d:#B8503A; --wall-name:rgba(255,255,255,.05);
+  --shadow:0 18px 50px rgba(0,0,0,.55),0 2px 6px rgba(0,0,0,.3);
+  --sky-top:#141633; --sky-mid:#23255A; --sky-low:#2E2A5C; --sky-deep:#1B1840;
+  --sky-b1:#2E2A5C; --sky-b1-op:1; --sky-b2:#1B1840;
+  --sky-window:#FFD27A; --sky-window-op:1;
+  --sky-orb:#EDE9FF; --sky-orb-w:9%; --sky-orb-shadow:0 0 40px 8px rgba(237,233,255,.35);
+  --star-op:.35; --testline-color:rgba(255,255,255,.10); --testline-pass:rgba(61,214,140,.35);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
+html,body{height:100%}
+body{margin:0;background:var(--wall-b);color:var(--ink);font-family:var(--ui);font-size:14px;line-height:1.5;overflow:hidden;-webkit-font-smoothing:antialiased;user-select:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.np-text,.ex-main,.compose,.stickies,.set-main,.tm,.bin,.start{overscroll-behavior:contain}
+.tm tbody tr:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+svg{display:block}
+
+/* ---------- desktop + wallpaper ---------- */
+.os{height:100%;display:flex;flex-direction:column}
+.desktop{flex:1;position:relative;overflow:hidden;
+  background:
+    radial-gradient(50% 55% at 80% 10%,color-mix(in srgb,var(--sky-orb) 30%,transparent),transparent 70%),
+    linear-gradient(180deg,var(--sky-top) 0%,var(--sky-mid) 45%,var(--sky-low) 72%,var(--sky-deep) 100%);
+  transition:background .6s ease;}
+.bloom{position:absolute;right:6%;top:14%;width:min(46vw,560px);aspect-ratio:1;pointer-events:none;opacity:.4;filter:blur(2px)}
+.bloom i{position:absolute;inset:0;border-radius:50% 50% 50% 8%;border:1.5px solid rgba(255,255,255,.45);transform-origin:50% 50%}
+.sky-stars{position:absolute;inset:0;background-image:radial-gradient(#fff 1px,transparent 1.5px);background-size:46px 38px;opacity:var(--star-op);transition:opacity .6s ease;pointer-events:none}
+.sky-orb{position:absolute;right:17%;top:15%;width:var(--sky-orb-w);aspect-ratio:1;border-radius:50%;background:var(--sky-orb);box-shadow:var(--sky-orb-shadow);transition:all .6s ease;pointer-events:none}
+.skyline{position:absolute;left:0;right:0;bottom:0;width:100%;height:min(30vh,260px);pointer-events:none}
+.skyline path{transition:fill .6s ease,opacity .6s ease}
+.skyline rect{transition:fill .6s ease,opacity .6s ease}
+.testlines{position:absolute;right:4%;bottom:calc(var(--tb) + 20px);width:min(300px,42vw);margin:0;font:10.5px/1.8 var(--mono);color:var(--testline-color);white-space:pre;pointer-events:none;user-select:none;text-align:left;transition:color .6s ease}
+@media (max-width:900px){.testlines{display:none}}
+.testlines b{color:var(--testline-pass);font-weight:400}
+
+.icons{position:absolute;inset:12px auto 12px 10px;display:grid;grid-auto-flow:column;grid-template-rows:repeat(auto-fill,96px);gap:4px;z-index:1}
+.dicon{width:88px;height:92px;display:flex;flex-direction:column;align-items:center;gap:6px;padding:8px 4px;border-radius:6px;text-align:center;color:var(--icon-text);text-shadow:var(--icon-shadow);font-size:12px;line-height:1.25}
+.dicon:hover{background:var(--hover)}
+.dicon:active{background:var(--press)}
+.dicon .ic{width:40px;height:40px;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25))}
+.dicon span{overflow-wrap:anywhere}
+
+/* status widget */
+.widget{position:absolute;right:20px;top:20px;width:280px;background:var(--win);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);z-index:1;user-select:text}
+.wphoto{width:72px;height:72px;border-radius:50%;object-fit:cover;display:block;margin-bottom:12px;box-shadow:0 0 0 3px var(--win-solid),0 0 0 4px var(--line)}
+.widget .row{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--pass);box-shadow:0 0 0 3px color-mix(in srgb,var(--pass) 25%,transparent)}
+.widget h2{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:26px;letter-spacing:-.035em;line-height:1;margin:10px 0 6px}
+.widget p{margin:0 0 12px;color:var(--muted);font-size:13px}
+.widget .acts{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:6px;background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:13px}
+.btn:hover{filter:brightness(1.08)}
+.btn.sec{background:var(--hover);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.sec:hover{background:var(--press);filter:none}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+@media (max-width:900px){.widget{display:none}}
+
+/* ---------- windows ---------- */
+.win{position:absolute;display:flex;flex-direction:column;background:var(--win);backdrop-filter:blur(30px) saturate(1.5);-webkit-backdrop-filter:blur(30px) saturate(1.5);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);overflow:hidden;min-width:300px;min-height:200px;max-width:calc(100% - 16px);max-height:calc(100% - 16px);z-index:10}
+.win.opening{animation:pop .22s cubic-bezier(.2,.8,.2,1)}
+.win.closing{opacity:0;transform:scale(.96) translateY(8px);transition:opacity .18s cubic-bezier(.2,.8,.2,1),transform .18s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+@keyframes pop{from{opacity:0;transform:scale(.95) translateY(8px)}}
+/* press feedback: subtle, fast, transform-only; safe on non-transform-positioned chrome */
+.tbtn,.ctl button,.btn,.ctx button,.dicon{transition:transform .12s cubic-bezier(.2,.8,.2,1),background .12s ease,filter .12s ease}
+.tbtn:active,.ctl button:active,.btn:active,.ctx button:active,.dicon:active{transform:scale(.96)}
+.win:focus-visible{outline:none;box-shadow:var(--shadow),0 0 0 2px var(--accent)}
+.win.max{left:0!important;top:0!important;width:100%!important;height:100%!important;max-width:none;max-height:none;border-radius:0}
+.win.inactive .titlebar{color:var(--muted)}
+.titlebar{height:38px;flex:0 0 auto;display:flex;align-items:center;gap:10px;padding-left:12px;cursor:default;touch-action:none}
+.titlebar .ic{width:16px;height:16px}
+.titlebar .t{flex:1;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ctl{display:flex;align-self:stretch}
+.ctl button{width:46px;display:grid;place-items:center;color:var(--ink)}
+.ctl button:hover{background:var(--hover)}
+.ctl button.x:hover{background:#C42B1C;color:#fff}
+.ctl svg{width:10px;height:10px}
+.wbody{flex:1;min-height:0;display:flex;flex-direction:column;background:var(--win-solid);border-top:1px solid var(--line);user-select:text}
+
+/* notepad */
+.menubar{display:flex;gap:2px;padding:4px 6px;font-size:13px;border-bottom:1px solid var(--line);background:var(--win-solid)}
+.menubar button{padding:3px 10px;border-radius:4px}
+.menubar button:hover{background:var(--hover)}
+.np-text{flex:1;overflow:auto;margin:0;padding:18px 22px;font-family:var(--mono);font-size:13px;line-height:1.7;white-space:pre-wrap;color:var(--ink)}
+.np-text b{font-weight:500;color:var(--accent)}
+.np-text .h{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:30px;letter-spacing:-.035em;line-height:1;color:var(--ink);display:block;margin-bottom:4px;white-space:normal}
+.np-text .c{color:var(--faint)}
+.statusbar{display:flex;gap:18px;padding:5px 14px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);white-space:nowrap;overflow:hidden}
+.statusbar span+span{padding-left:18px;border-left:1px solid var(--line)}
+
+/* explorer */
+.ex-bar{display:flex;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid var(--line)}
+.crumb{flex:1;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:6px;background:var(--pane);font-size:13px;white-space:nowrap;overflow:hidden}
+.crumb button{padding:0 2px;border-radius:3px}
+.crumb button:hover{background:var(--hover)}
+.crumb .sep{color:var(--faint)}
+.ex-search{width:180px;padding:5px 10px;border-radius:6px;background:var(--pane);border:1px solid transparent;color:var(--ink);font:inherit;font-size:13px}
+.ex-search:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.ex{flex:1;min-height:0;display:grid;grid-template-columns:180px 1fr}
+.ex-side{border-right:1px solid var(--line);padding:10px 6px;overflow:auto;background:var(--pane)}
+.ex-side .grp{font-size:11px;color:var(--muted);padding:8px 10px 4px;text-transform:uppercase;letter-spacing:.06em}
+.ex-side button{display:flex;align-items:center;gap:8px;width:100%;padding:6px 10px;border-radius:5px;font-size:13px;text-align:left}
+.ex-side button:hover,.ex-side button.on{background:var(--hover)}
+.ex-side .ic{width:16px;height:16px;flex:0 0 auto}
+.ex-main{overflow:auto;padding:16px}
+.folders{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:6px}
+.folder{display:flex;flex-direction:column;align-items:center;gap:6px;padding:12px 6px;border-radius:6px;font-size:12.5px;text-align:center}
+.folder:hover{background:var(--hover)}
+.folder .ic{width:58px;height:48px}
+.folder small{color:var(--muted);font-size:11px}
+.detail{display:flex;flex-direction:column;gap:16px;max-width:620px}
+.detail .tag.ok{color:var(--pass)}
+.detail .fs{margin:0 0 10px;color:var(--muted);font-size:14px}
+.detail .acts{display:flex;gap:8px;flex-wrap:wrap}
+.detail .tag{display:inline-flex;align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;border:1px solid currentColor;color:var(--warn)}
+.detail h3{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:30px;letter-spacing:-.035em;line-height:1;margin:0}
+.detail p{margin:0;color:var(--muted)}
+.card{background:var(--pane);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.card .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.card blockquote{margin:0;font-size:15px}
+.card blockquote b{color:var(--accent);font-weight:600}
+.gwt{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-family:var(--mono);font-size:12.5px}
+.gwt b{color:var(--accent);font-weight:500}
+.props{display:grid;grid-template-columns:120px 1fr;gap:6px 12px;font-size:13px}
+.props dt{color:var(--muted)}
+.props dd{margin:0}
+.uc{display:flex;flex-direction:column;align-items:flex-start;gap:14px;max-width:560px;padding:8px 4px}
+.uc .big{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:40px;letter-spacing:-.04em;line-height:1}
+.uc p{margin:0;color:var(--muted)}
+.uc .acts{display:flex;gap:8px;flex-wrap:wrap}
+.tape{width:100%;height:14px;border-radius:3px;background:repeating-linear-gradient(-45deg,#F5B400 0 14px,#1B1B24 14px 28px)}
+.empty{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;height:100%;min-height:220px;text-align:center;color:var(--muted)}
+.empty .big{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:44px;letter-spacing:-.04em;color:var(--ink);line-height:1}
+
+/* mail */
+.mail{flex:1;min-height:0;display:grid;grid-template-columns:200px 1fr}
+.mail-side{background:var(--pane);border-right:1px solid var(--line);padding:12px 8px;display:flex;flex-direction:column;gap:2px;overflow:auto}
+.mail-side .new{margin:0 4px 10px}
+.mail-side .fl{display:flex;justify-content:space-between;padding:6px 10px;border-radius:5px;font-size:13px}
+.mail-side .fl.on{background:var(--hover);font-weight:600}
+.mail-side .fl small{color:var(--muted)}
+.mail-side .grp{font-size:11px;color:var(--muted);padding:12px 10px 4px;text-transform:uppercase;letter-spacing:.06em}
+.mail-side a{display:flex;justify-content:space-between;padding:6px 10px;border-radius:5px;font-size:13px;text-decoration:none;color:var(--ink)}
+.mail-side a:hover{background:var(--hover)}
+.compose{display:flex;flex-direction:column;min-height:0;overflow:auto}
+.field{display:flex;align-items:center;gap:10px;padding:0 16px;border-bottom:1px solid var(--line)}
+.field label{width:62px;color:var(--muted);font-size:13px;flex:0 0 auto}
+.field input{flex:1;min-width:0;padding:10px 0;border:0;background:transparent;color:var(--ink);font:inherit;font-size:14px}
+.field input:focus-visible{outline:none}
+.field:focus-within{box-shadow:inset 3px 0 0 var(--accent)}
+.field input[readonly]{color:var(--accent);font-weight:600}
+.compose textarea{flex:1;min-height:150px;padding:14px 16px;border:0;resize:none;background:transparent;color:var(--ink);font:inherit;font-size:14px;line-height:1.6}
+.compose textarea:focus-visible{outline:none;box-shadow:inset 3px 0 0 var(--accent)}
+.sendbar{display:flex;align-items:center;gap:10px;padding:10px 16px;border-top:1px solid var(--line);flex-wrap:wrap}
+.sendbar .note{font-size:12.5px;color:var(--muted);flex:1;min-width:180px}
+.sent{margin:12px 16px 16px;border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--pane);display:flex;flex-direction:column;gap:10px}
+.sent h4{margin:0;font-size:15px}
+.sent p{margin:0;color:var(--muted);font-size:13px}
+.sent .addr{font-family:var(--mono);font-size:13px;user-select:all;color:var(--ink)}
+.sent .acts{display:flex;gap:8px;flex-wrap:wrap}
+
+/* sticky notes */
+.stickies{flex:1;overflow:auto;padding:16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;background:var(--pane)}
+.sticky{border-radius:4px;padding:14px 14px 16px;color:#1B1B24;box-shadow:0 6px 14px rgba(0,0,0,.14);display:flex;flex-direction:column;gap:8px;transform:rotate(var(--r,0deg));transition:transform .25s}
+.sticky:hover{transform:rotate(0) translateY(-3px)}
+.sticky .id{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.7}
+.sticky p{margin:0;font-size:14px;line-height:1.45}
+.sticky b{font-weight:700}
+.sticky p{text-wrap:pretty}
+.sticky ul{margin:0;padding:8px 0 0;list-style:none;border-top:1px dashed rgba(0,0,0,.25);font-family:var(--mono);font-size:11.5px;display:flex;flex-direction:column;gap:3px}
+.sticky li::before{content:"✓ ";color:#0E6B45;font-weight:700}
+.s1{background:#FFE98A}.s2{background:#B9F3D1}.s3{background:#FFC7D6}.s4{background:#C9D4FF}.s5{background:#FFD8A8}
+
+/* settings / about */
+.set{flex:1;min-height:0;display:grid;grid-template-columns:190px 1fr}
+.set-side{background:var(--pane);border-right:1px solid var(--line);padding:12px 8px;overflow:auto}
+.me{display:flex;align-items:center;gap:10px;padding:6px 8px 14px}
+.avatar{object-fit:cover;width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:15px;flex:0 0 auto}
+.me b{display:block;font-size:13px}
+.me small{color:var(--muted);font-size:11.5px}
+.set-side button{display:block;width:100%;text-align:left;padding:7px 10px;border-radius:5px;font-size:13px;position:relative}
+.set-side button:hover{background:var(--hover)}
+.set-side button.on{background:var(--hover)}
+.set-side button.on::before{content:"";position:absolute;left:0;top:25%;bottom:25%;width:3px;border-radius:3px;background:var(--accent)}
+.set-main{overflow:auto;padding:20px 24px 28px;display:flex;flex-direction:column;gap:18px}
+.set-main h3{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:30px;letter-spacing:-.035em;line-height:1;margin:0}
+.spec{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--pane)}
+.spec .hd{padding:12px 16px;font-weight:600;border-bottom:1px solid var(--line)}
+.spec dl{margin:0;display:grid;grid-template-columns:170px 1fr;font-size:13px}
+.spec dt,.spec dd{margin:0;padding:9px 16px;border-bottom:1px solid var(--line)}
+.spec dt{color:var(--muted)}
+.spec dl > :nth-last-child(-n+2){border-bottom:0}
+.creds{display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.cred{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:14px;background:var(--pane)}
+.seal{width:46px;height:46px;border-radius:50%;border:1.5px dashed var(--accent);display:grid;place-items:center;font-family:var(--display);font-weight:800;color:var(--accent);font-size:12px;flex:0 0 auto}
+.cred b{display:block;font-size:13.5px}
+.cred small{color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--pane)}
+.stat .v{font-family:var(--display);font-weight:800;font-stretch:62%;font-size:48px;line-height:.9;font-variant-numeric:tabular-nums}
+.stat .v small{font-size:.5em;color:var(--accent)}
+.stat .k{font-size:12px;color:var(--muted)}
+
+/* task manager */
+.tm{flex:1;min-height:0;overflow:auto}
+.tm table{width:100%;border-collapse:collapse;font-size:13px}
+.tm th{position:sticky;top:0;background:var(--win-solid);text-align:left;font-weight:500;color:var(--muted);padding:8px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tm th.num,.tm td.num{text-align:right;font-variant-numeric:tabular-nums}
+.tm td{padding:8px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tm tr.sel td{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.tm tbody tr{cursor:default}
+.tm tbody tr:hover td{background:var(--hover)}
+.tm td.cpu{position:relative}
+.tm td.cpu i{position:absolute;inset:4px 0 4px auto;background:color-mix(in srgb,var(--warn) 22%,transparent);z-index:0}
+.tm td.cpu span{position:relative}
+.tm .st{color:var(--pass);font-size:12px}
+.tm .st.bad{color:var(--danger)}
+.tm-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+
+/* product backlog */
+.uswrap{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr);background:var(--pane)}
+.uswrap.detail-open{grid-template-columns:minmax(0,1fr) 360px}
+.uswrap .stickies{align-content:start}
+.us-epic{grid-column:1 / -1;display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin:10px 2px 0;font-size:14px;font-weight:700;color:var(--ink)}
+.us-epic:first-child{margin-top:0}
+.us-epic small{font-weight:400;color:var(--muted);font-size:12px}
+button.sticky{text-align:left;font:inherit;cursor:pointer;border:0;width:100%}
+button.sticky[aria-pressed="true"]{outline:3px solid var(--accent);outline-offset:2px;transform:rotate(0) translateY(-3px)}
+.sticky.next{opacity:.85}
+.us-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+.us-meta i{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;padding:2px 7px;border-radius:999px;background:rgba(0,0,0,.08);color:#1B1B24}
+.us-meta i.pri.must{background:#1B1B24;color:#fff}
+.us-meta i.done{background:#0E6B45;color:#fff}
+.usdetail{border-left:1px solid var(--line);background:var(--win-solid);overflow:auto;padding:16px 18px 22px;display:flex;flex-direction:column;gap:12px}
+.usd-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.usd-top .id{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.usd-x{width:28px;height:28px;border-radius:6px;font-size:18px;line-height:1;display:grid;place-items:center}
+.usd-x:hover{background:var(--hover)}
+.usdetail h3{margin:0;font-family:var(--display);font-weight:800;font-stretch:112%;font-size:24px;letter-spacing:-.03em;line-height:1.05}
+.usdetail .us-meta{padding-top:0;margin-top:0}
+.usdetail .us-meta i{background:var(--pane);color:var(--ink)}
+.usdetail .us-meta i.pri.must{background:var(--ink);color:var(--win-solid)}
+.usdetail .us-meta i.done{background:var(--pass);color:#fff}
+.usd-block .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.usd-block p{margin:0;font-size:14.5px;line-height:1.5}
+.usd-block p b{color:var(--accent)}
+.scn{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:8px;background:var(--pane)}
+.scn > b{display:block;font-size:13px;margin-bottom:6px}
+.scn .gwt{font-size:12.5px}
+.usd-note{margin:0;font-size:13px;color:var(--muted);font-style:italic;border-left:3px solid var(--accent);padding-left:10px}
+@media (max-width:760px){
+  .uswrap.detail-open{grid-template-columns:minmax(0,1fr)}
+  .uswrap.detail-open .stickies{display:none}
+  .usdetail{border-left:0}
+}
+
+/* get started guide */
+.guide{flex:1;overflow:auto;padding:0 0 22px;display:flex;flex-direction:column;gap:18px;background:var(--pane)}
+.gh{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:center;padding:22px 24px;background:linear-gradient(120deg,color-mix(in srgb,var(--accent) 22%,var(--win-solid)),var(--win-solid) 70%);border-bottom:1px solid var(--line)}
+.gh-art{width:84px;height:84px;border-radius:22px;background:var(--win-solid);display:grid;place-items:center;box-shadow:var(--shadow);animation:bob 3s ease-in-out infinite}
+.gh-art svg{width:60px;height:60px}
+@keyframes bob{50%{transform:translateY(-5px) rotate(-3deg)}}
+.gh h3{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:32px;letter-spacing:-.04em;line-height:1;margin:0 0 6px}
+.gh p{margin:0 0 12px;color:var(--muted)}
+.gh .acts,.gsec .acts{display:flex;gap:8px;flex-wrap:wrap}
+.gsec{padding:0 24px;display:flex;flex-direction:column;gap:10px}
+.gsec-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.gsec-h h4{margin:0;font-size:15px}
+.gsec-h span{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.qtrack{height:6px;border-radius:999px;background:var(--line);overflow:hidden}
+.qtrack i{display:block;height:100%;width:0;background:var(--pass);border-radius:999px;transition:width .4s cubic-bezier(.16,1,.3,1)}
+.quests{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.quests li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border-radius:8px;background:var(--win-solid);border:1px solid var(--line);transition:border-color .2s}
+.quests li b{display:block;font-size:13.5px;font-weight:600}
+.quests li small{color:var(--muted);font-size:12px}
+.qchk{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-size:12px;font-weight:700;color:#fff}
+.quests li.ok{border-color:color-mix(in srgb,var(--pass) 55%,transparent)}
+.quests li.ok .qchk{background:var(--pass);border-color:var(--pass);animation:pop .3s cubic-bezier(.2,.8,.2,1)}
+.quests li.ok b{text-decoration:line-through;text-decoration-color:color-mix(in srgb,var(--ink) 40%,transparent)}
+.keys{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.keys div{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:10px 12px;border-radius:8px;background:var(--win-solid);border:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.keys span{width:100%}
+kbd{display:inline-block;font-family:var(--mono);font-size:12px;padding:3px 8px;border-radius:6px;border:1px solid var(--line);border-bottom-width:3px;background:var(--win-solid);color:var(--ink);white-space:nowrap}
+.gnote{margin:-4px 0 0;font-size:13px;color:var(--muted)}
+.lchips{display:flex;gap:8px;flex-wrap:wrap}
+.lchip{font-family:var(--mono);font-size:13px;padding:6px 12px;border-radius:999px;background:var(--win-solid);border:1px solid var(--line);color:var(--accent);transition:border-color .15s,transform .15s}
+.lchip:hover{border-color:var(--accent);transform:translateY(-1px)}
+.eggs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.egg{text-align:left;padding:12px 14px;border-radius:8px;background:var(--win-solid);border:1px dashed var(--line);display:flex;flex-direction:column;gap:4px}
+.egg b{font-size:13.5px}
+.egg span{font-size:12.5px;color:var(--muted);filter:blur(5px);transition:filter .3s;user-select:none}
+.egg.open span{filter:none;user-select:text}
+.egg:not(.open):hover{border-color:var(--accent)}
+.gfoot{padding:0 24px;font-size:13px;color:var(--muted)}
+.linkbtn{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px;padding:0}
+@media (max-width:620px){.quests,.eggs{grid-template-columns:minmax(0,1fr)}.keys{grid-template-columns:repeat(2,minmax(0,1fr))}.gh{grid-template-columns:minmax(0,1fr)}.gh-art{width:64px;height:64px}}
+
+/* tour overlay */
+.tour{position:fixed;inset:0;z-index:990}
+.tour-spot{position:fixed;border-radius:12px;box-shadow:0 0 0 9999px rgba(8,9,20,.62);transition:all .35s cubic-bezier(.16,1,.3,1);pointer-events:none;outline:2px solid var(--accent);outline-offset:2px}
+.tour-card{position:fixed;width:min(320px,calc(100vw - 24px));background:var(--menu);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;transition:left .35s cubic-bezier(.16,1,.3,1),top .35s cubic-bezier(.16,1,.3,1)}
+.tour-card.center{left:50%!important;top:50%!important;transform:translate(-50%,-50%);box-shadow:0 0 0 9999px rgba(8,9,20,.62),var(--shadow)}
+.tc-head{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tc-av{width:26px;height:26px;display:block}
+.tc-av svg{width:100%;height:100%}
+.tc-skip{margin-left:auto;font-size:12px;color:var(--muted);padding:4px 8px;border-radius:6px}
+.tc-skip:hover{background:var(--hover)}
+.tour-card h4{margin:0;font-size:16px}
+.tour-card p{margin:0;font-size:13.5px;color:var(--muted)}
+.tour-card .acts{display:flex;gap:8px;justify-content:flex-end;margin-top:4px}
+@media (prefers-reduced-motion:reduce){.gh-art{animation:none}}
+
+/* glitch mascot */
+.glitch{position:fixed;left:0;top:0;z-index:940;pointer-events:none;will-change:transform}
+.g-body{pointer-events:auto;width:46px;height:46px;padding:0;display:block;filter:drop-shadow(0 4px 6px rgba(0,0,0,.25));transition:transform .2s cubic-bezier(.16,1,.3,1);cursor:pointer}
+.g-body:hover{transform:scale(1.08) rotate(-6deg)}
+.g-body svg{width:100%;height:100%}
+.glitch.docked .g-body{width:38px;height:38px}
+.glitch.docked .g-bubble{bottom:46px}
+.glitch.docked .g-x{top:-8px;right:-12px}
+.glitch.walk .g-legs{animation:legs .25s steps(2) infinite}
+@keyframes legs{50%{transform:translateY(1.5px)}}
+.glitch.sleep .g-eyes{transform:scaleY(.15);transform-origin:32px 19px;transform-box:view-box}
+.g-bubble{position:absolute;bottom:52px;left:18px;width:max-content;max-width:230px;background:var(--menu);color:var(--ink);border:1px solid var(--line);border-radius:12px 12px 12px 3px;padding:8px 11px;font-size:12.5px;line-height:1.4;box-shadow:var(--shadow);opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s;pointer-events:none}
+.g-bubble.on{opacity:1;transform:none}
+.glitch.flip .g-bubble{left:auto;right:18px;border-radius:12px 12px 3px 12px}
+.g-x{pointer-events:auto;position:absolute;top:-6px;right:-10px;width:20px;height:20px;border-radius:50%;background:var(--menu);border:1px solid var(--line);font-size:13px;line-height:1;display:grid;place-items:center;opacity:0;transition:opacity .15s}
+.glitch:hover .g-x,.g-x:focus-visible{opacity:1}
+@media (hover:none){.g-x{opacity:1}}
+/* open-in-browser notice */
+.webtip{position:fixed;inset:auto 12px calc(var(--tb) + env(safe-area-inset-bottom,0px) + 12px) 12px;z-index:980;display:flex;justify-content:center;pointer-events:none}
+.wt-in{pointer-events:auto;max-width:420px;width:100%;background:var(--menu);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.wt-in b{font-size:15px}
+.wt-in p{margin:0;font-size:13.5px;color:var(--muted)}
+.wt-acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+
+/* user guide */
+.guide{flex:1;overflow:auto;padding:22px 24px 26px;display:flex;flex-direction:column;gap:18px;background:var(--pane)}
+.g-hero h3{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:30px;letter-spacing:-.035em;line-height:1;margin:0 0 8px}
+.g-hero p{margin:0;color:var(--muted)}
+.g-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.g-card{background:var(--win-solid);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.g-card.wide{grid-column:1 / -1}
+.g-card h4{margin:0 0 6px;font-size:14.5px}
+.g-card p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.55}
+.g-card .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.g-card .sel{color:var(--ink);font-weight:600;user-select:all}
+kbd{font-family:var(--mono);font-size:12px;padding:1px 6px;border-radius:4px;border:1px solid var(--line);background:var(--pane);color:var(--ink);white-space:nowrap}
+@media (max-width:560px){.g-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* recycle bin */
+.bin{flex:1;padding:16px;overflow:auto;display:flex;flex-direction:column;gap:14px}
+.bin table{width:100%;border-collapse:collapse;font-size:13px}
+.bin th{text-align:left;font-weight:500;color:var(--muted);padding:6px 10px;border-bottom:1px solid var(--line)}
+.bin td{padding:8px 10px;border-bottom:1px solid var(--line)}
+
+/* ---------- taskbar ---------- */
+.taskbar{height:calc(var(--tb) + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);flex:0 0 auto;background:var(--taskbar);backdrop-filter:blur(30px) saturate(1.5);-webkit-backdrop-filter:blur(30px) saturate(1.5);border-top:1px solid var(--line);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;position:relative;z-index:900}
+.tb-left{display:flex;align-items:center;gap:8px;padding-left:12px;font-size:12px;color:var(--muted);overflow:hidden}
+.tb-left b{color:var(--ink);font-weight:600}
+.tb-mid{display:flex;align-items:center;gap:4px}
+.tbtn{width:44px;height:42px;border-radius:6px;display:grid;place-items:center;position:relative}
+.tbtn:hover{background:var(--hover)}
+.tbtn .ic{width:24px;height:24px}
+.tbtn::after{content:"";position:absolute;bottom:3px;left:50%;width:0;height:3px;border-radius:3px;background:var(--faint);transform:translateX(-50%);transition:width .2s,background .2s}
+.tbtn.open::after{width:6px}
+.tbtn.focus::after{width:16px;background:var(--accent)}
+.startbtn .logo{width:24px;height:24px;border-radius:7px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:15px;transition:transform .2s}
+.startbtn:active .logo{transform:scale(.88)}
+.search{display:flex;align-items:center;gap:8px;height:34px;padding:0 14px;border-radius:999px;background:var(--hover);color:var(--muted);font-size:13px;margin:0 6px;white-space:nowrap}
+.search:hover{background:var(--press)}
+.search svg{width:14px;height:14px}
+.tray{display:flex;align-items:center;justify-content:flex-end;gap:2px;padding-right:8px}
+.tray .ti{display:flex;align-items:center;gap:6px;height:40px;padding:0 8px;border-radius:6px;font-size:12px}
+.tray .ti:hover{background:var(--hover)}
+.tray .ti svg{width:16px;height:16px}
+.themepill{box-shadow:inset 0 0 0 1px var(--line);border-radius:999px!important;padding:0 12px!important;height:32px!important;font-weight:600}
+.clock{display:flex;flex-direction:column;align-items:flex-end;line-height:1.25;font-size:12px;font-variant-numeric:tabular-nums}
+@media (max-width:760px){
+  .search,.tb-left,.tray .coffee,.tray .net{display:none}
+  .taskbar{grid-template-columns:0 1fr auto}
+  .tb-mid{justify-content:center}
+  .tbtn{width:40px}
+}
+
+/* ---------- start menu ---------- */
+.start{position:absolute;left:50%;bottom:calc(var(--tb) + env(safe-area-inset-bottom,0px) + 10px);transform:translateX(-50%);width:min(620px,calc(100% - 16px));max-height:calc(100% - var(--tb) - 30px);overflow:auto;background:var(--menu);backdrop-filter:blur(40px) saturate(1.5);-webkit-backdrop-filter:blur(40px) saturate(1.5);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);z-index:950;display:flex;flex-direction:column}
+.start.opening{animation:rise .22s cubic-bezier(.2,.8,.2,1)}
+@keyframes rise{from{opacity:0;transform:translate(-50%,16px)}}
+.st-in{padding:20px 24px 12px;display:flex;flex-direction:column;gap:14px}
+.st-search{display:flex;align-items:center;gap:10px;padding:9px 14px;border-radius:999px;background:var(--win-solid);border:1px solid var(--line)}
+.st-search svg{width:14px;height:14px;color:var(--muted)}
+.st-search input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:inherit;font-size:14px}
+.st-search input:focus-visible{outline:none}
+.st-search:focus-within{border-color:var(--accent)}
+.st-h{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:13px}
+.st-h small{color:var(--muted);font-weight:400}
+.pinned{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:4px}
+.pin{display:flex;flex-direction:column;align-items:center;gap:6px;padding:10px 4px;border-radius:6px;font-size:12px;text-align:center}
+.pin:hover{background:var(--hover)}
+.pin .ic{width:32px;height:32px}
+.recs{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.rec{display:flex;gap:10px;align-items:center;padding:8px 10px;border-radius:6px;text-align:left}
+.rec:hover{background:var(--hover)}
+.rec .ic{width:26px;height:26px;flex:0 0 auto}
+.rec b{display:block;font-weight:500;font-size:13px}
+.rec small{color:var(--muted);font-size:11.5px}
+.st-foot{display:flex;justify-content:space-between;align-items:center;padding:10px 24px;border-top:1px solid var(--line);background:color-mix(in srgb,var(--pane) 70%,transparent)}
+.st-foot .me{padding:0}
+.power{width:38px;height:38px;border-radius:6px;display:grid;place-items:center}
+.power:hover{background:var(--hover)}
+.power svg{width:16px;height:16px}
+@media (max-width:560px){.recs{grid-template-columns:1fr}}
+
+/* context menu */
+.ctx{position:absolute;min-width:230px;background:var(--menu);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);padding:4px;z-index:960;font-size:13px}
+.ctx button{display:flex;justify-content:space-between;gap:18px;width:100%;padding:7px 12px;border-radius:4px;text-align:left}
+.ctx button:hover{background:var(--hover)}
+.ctx small{color:var(--muted)}
+.ctx hr{border:0;border-top:1px solid var(--line);margin:4px 0}
+
+/* toasts */
+.toasts{position:absolute;right:12px;bottom:calc(var(--tb) + env(safe-area-inset-bottom,0px) + 12px);display:flex;flex-direction:column;gap:8px;z-index:970;width:min(340px,calc(100% - 24px))}
+.toast{background:var(--menu);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);padding:12px 14px;display:grid;grid-template-columns:auto 1fr auto;gap:10px;animation:slidein .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes slidein{from{opacity:0;transform:translateX(30px)}}
+.toast.out{opacity:0;transform:translateX(30px);transition:opacity .25s cubic-bezier(.2,.8,.2,1),transform .25s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.toast .ic{width:20px;height:20px;margin-top:2px}
+.toast b{display:block;font-size:13px}
+.toast p{margin:2px 0 0;font-size:12.5px;color:var(--muted)}
+.toast .acts{display:flex;gap:6px;margin-top:8px}
+.toast .x{align-self:start;color:var(--muted);width:22px;height:22px;border-radius:4px;display:grid;place-items:center}
+.toast .x:hover{background:var(--hover)}
+
+/* boot + blue screen */
+.boot{position:fixed;inset:0;z-index:1000;background:#07070D;color:#E8E8F2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;text-align:center;padding:24px}
+.boot .logo{width:64px;height:64px;border-radius:16px;background:#8B84FF;color:#07070D;display:grid;place-items:center;font-family:var(--display);font-weight:900;font-size:38px}
+.spinner{width:34px;height:34px;position:relative}
+.spinner i{position:absolute;inset:0;animation:orb 1.6s cubic-bezier(.5,.1,.5,.9) infinite}
+.spinner i::before{content:"";position:absolute;top:0;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#E8E8F2}
+.spinner i:nth-child(2){animation-delay:.12s}.spinner i:nth-child(3){animation-delay:.24s}.spinner i:nth-child(4){animation-delay:.36s}.spinner i:nth-child(5){animation-delay:.48s}
+@keyframes orb{to{transform:rotate(360deg)}}
+.boot .msg{font-size:14px;color:#A6A7BD;min-height:1.5em}
+.boot .skip{position:absolute;bottom:calc(20px + env(safe-area-inset-bottom,0px));font-size:12px;color:#6E7089}
+html:not(.js) .boot{display:none}
+.bsod{position:fixed;inset:0;z-index:1001;background:#1E4FD8;color:#fff;padding:clamp(24px,10vw,120px);display:flex;flex-direction:column;justify-content:center;gap:22px;user-select:text}
+.bsod .face{font-size:clamp(80px,12vw,140px);line-height:1;font-weight:300}
+.bsod h2{margin:0;font-weight:400;font-size:clamp(20px,2.6vw,30px);max-width:32ch;line-height:1.35}
+.bsod p{margin:0;font-size:14px;opacity:.85;max-width:60ch}
+.bsod .btn{align-self:flex-start;background:#fff;color:#1E4FD8}
+
+@media (max-width:700px){
+  .win{left:6px!important;top:6px!important;width:calc(100% - 12px)!important;height:calc(100% - 12px)!important;max-width:none;max-height:none}
+  .ctl .mx{display:none}
+  .ex,.mail,.set{grid-template-columns:1fr}
+  .ex-side,.mail-side,.set-side{display:none}
+  .icons{grid-auto-flow:row;grid-template-columns:repeat(auto-fill,88px);grid-template-rows:none;inset:10px 10px auto 10px;justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<div class="boot" id="boot" role="status" aria-live="polite">
+  <div class="logo">S</div>
+  <div class="spinner" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="msg" id="bootmsg">Starting SudhanshOS…</div>
+  <button class="skip" id="skip" type="button">Click anywhere to skip</button>
+</div>
+
+<div class="os">
+  <div class="desktop" id="desktop">
+    <div class="sky-stars" aria-hidden="true"></div>
+    <div class="sky-orb" aria-hidden="true"></div>
+    <svg class="skyline" viewBox="0 0 800 260" preserveAspectRatio="none" aria-hidden="true">
+      <path style="fill:var(--sky-b1);opacity:var(--sky-b1-op)" d="M0 260V170h40v-20h30v20h40v-40l30-25 30 25v40h50v-30h20v-15h20v15h20v30h60v-60l25-35 25 35v60h40v-25h30v25h60v-45h15l15-30 15 30h15v45h50v-20h40v20h45v90z"/>
+      <path style="fill:var(--sky-b2)" d="M0 260v-50h60v-25h25v25h70v-45l20-18 20 18v45h60v-30h30v30h90v-60h14l6-12 6 12h14v60h80v-35h30v35h70v-20h35v20h66v70z"/>
+      <g style="fill:var(--sky-window);opacity:var(--sky-window-op)">
+        <rect x="190" y="220" width="6" height="9"/><rect x="215" y="220" width="6" height="9"/>
+        <rect x="440" y="208" width="6" height="9"/><rect x="460" y="208" width="6" height="9"/>
+        <rect x="620" y="226" width="6" height="9"/><rect x="95" y="232" width="6" height="9"/>
+        <rect x="540" y="232" width="6" height="9"/>
+      </g>
+    </svg>
+    <div class="bloom" aria-hidden="true"><i></i><i style="transform:rotate(90deg)"></i><i style="transform:rotate(180deg)"></i><i style="transform:rotate(270deg)"></i></div>
+    <pre class="testlines" aria-hidden="true"><b>✓</b> cv_opens_on_load ................ passed
+<b>✓</b> recruiter_finds_email .......... passed
+<b>✓</b> works_on_phone ................. passed
+<b>✓</b> dark_mode_readable ............. passed
+<b>✓</b> no_hallucinations_in_cv ........ passed
+<b>✓</b> coffee_level_above_20 .......... passed
+<b>✓</b> keyboard_only_navigation ....... passed
+<b>✓</b> glitch_stays_polite ............ passed</pre>
+
+    <nav class="icons" id="icons" aria-label="Desktop"></nav>
+
+    <aside class="widget" aria-label="Status">
+      <img class="wphoto" src="../assets/sudhansh-arora.jpg" alt="Sudhansh Arora" width="72" height="72">
+      <div class="row"><span class="dot"></span>Open to work · AI QA &amp; Governance</div>
+      <h2>Sudhansh Arora</h2>
+      <p>AI QA Lead. I test what AI says before your users read it.</p>
+      <div class="acts">
+        <button class="btn" type="button" data-open="notepad">Open CV</button>
+        <button class="btn sec" type="button" data-open="mail">Email Him</button>
+      </div>
+    </aside>
+
+    <!-- NOTEPAD: CV -->
+    <section class="win" id="w-notepad" data-app="notepad" hidden role="dialog" aria-label="CV">
+      <div class="wbody">
+        <div class="menubar"><button type="button" data-joke="file">File</button><button type="button" data-joke="edit">Edit</button><button type="button" data-joke="view">View</button></div>
+<pre class="np-text"><span class="h">Sudhansh Arora</span><b>Senior Consultant · AI QA Lead</b>
+AI/LLM testing and evaluation · Model quality and reliability
+Jaipur, India · open to travel for client-facing roles
+arorasudhansh31@gmail.com
+linkedin.com/in/sudhansh-arora · github.com/Sudhansh3110
+
+<b>// SUMMARY</b>
+AI QA Lead with 5+ years in quality engineering, comfortable leading conversations with client stakeholders. Leads the AI QA practice at Xebia: evaluation rubrics and pass/fail criteria for hallucination, factual consistency, prompt robustness and bias/fairness, plus evaluation harnesses for non-deterministic outputs where normal test assertions break down. Hands-on with GPT-powered features. 82% automation coverage, 40% less manual testing.
+
+<b>// EXPERIENCE</b>
+<b>Xebia, Jaipur</b> · Senior Consultant (AI QA Lead)
+Mar 2024 - now
+Projects: Microsoft Power Platform (Sales 360, AI-powered documentation handling), Appian (fintech implementation, US client), healthcare/pharma client (confidential)
+- Owns the AI QA practice: evaluation rubrics and pass/fail criteria for AI features (Copilot, AI Builder, GPT-powered functionality) covering hallucination, factual consistency and output correctness
+- Tests non-deterministic, LLM-driven features: prompt robustness, edge cases, failure modes, regression at scale
+- Adds responsible-AI checkpoints to releases: bias/fairness review, audit trails, documented sign-off gates
+- Works directly with client stakeholders: requirement, walkthrough and UAT sessions, and AI quality results explained in plain business terms
+- Healthcare/pharma engagement (confidential client): AI QA and business analysis role, capturing requirements, writing acceptance criteria and owning the quality plan
+- 82% automation coverage and 40% less manual testing across 2 concurrent projects
+- Full QA lifecycle in Azure DevOps across 12+ sprints; API testing of 150+ endpoints in Postman
+- Mentors QA engineers on LLM evaluation techniques
+
+<b>Kalagato, Remote</b> · QA Tester
+Oct 2023 - Jan 2024
+Apps: All Bank Balance, GST Calculator, EMI Calculator, Hindi-English Translator, RYN VPN
+- Raised automation coverage from 30% to 68% across 5 live apps with Appium regression scripts
+- API, UI and A/B testing on Android and iOS; 99.2% crash-free rate on the Play Store
+- Ad integration and Firebase premium-plan flow testing; Strapi CMS data validation and feature-flag testing
+
+<b>Decurtis Corporation, Jaipur</b> · Associate Test Engineer
+Jan 2022 - Aug 2023
+- Tested and delivered 4 enterprise modules with 100% on-time releases
+- 400+ test cases in TestRail; Selenium, Appium and Python automation in CI/CD, 30% less post-release defect leakage
+- Owned the JIRA QA backlog: 200+ tickets, zero SLA breaches
+
+<b>Taproot Workspaces, Jaipur</b> · Quality Analyst Intern
+Apr 2021 - Jan 2022
+- Python front-end test automation for a remote-workspace SaaS product
+- UI/UX testing in Figma and API validation; helped the startup reach its first 100 paying users
+
+<b>// CERTIFICATIONS</b>
+Claude Certified Associate (CCAO-F), Anthropic
+Certified Scrum Master (CSM), Scrum Alliance
+Professional Certificate in AI &amp; ML, IIT Kanpur
+
+<b>// EDUCATION</b>
+B.Tech, Computer Science &amp; Engineering · 2018 - 2022
+Global Institute of Technology, Jaipur · CGPA 8.16
+
+<b>// SKILLS</b>
+AI/LLM evaluation: hallucination detection, factual consistency, prompt robustness, bias/fairness audits, evaluation rubrics, responsible-AI checkpoints, GPT/LLM API output testing
+Client and delivery: stakeholder workshops, requirement elicitation, acceptance criteria, UAT coordination
+Automation: Selenium WebDriver, Java, TestNG, Appium, Python
+API and CI/CD: Postman, REST, Jenkins, Azure DevOps, Git
+Test management: JIRA, TestRail, Azure DevOps Boards, Zephyr
+Platforms: Power Platform, Appian, Salesforce, Firebase, Strapi
+
+<span class="c">// Note to recruiter: yes, the file is called final_FINAL_v3.
+// It was tested twice. Both times it passed.</span></pre>
+        <div class="statusbar"><span>Ln 1, Col 1</span><span>100%</span><span>UTF-8</span><span>Spell check: passed</span></div>
+      </div>
+    </section>
+
+    <!-- EXPLORER: PROJECTS -->
+    <section class="win" id="w-explorer" data-app="explorer" hidden role="dialog" aria-label="Projects">
+      <div class="wbody">
+        <div class="ex-bar">
+          <div class="crumb" id="crumb"></div>
+          <input class="ex-search" id="exsearch" type="search" placeholder="Search Version 2.0…" aria-label="Search projects">
+        </div>
+        <div class="ex">
+          <div class="ex-side">
+            <div class="grp">Quick access</div>
+            <button type="button" class="on" data-nav="root"><span class="ic" data-ico="folder"></span>Version 2.0</button>
+            <button type="button" data-open="stickies"><span class="ic" data-ico="sticky"></span>User Stories</button>
+            <button type="button" data-open="notepad"><span class="ic" data-ico="notepad"></span>CV</button>
+            <div class="grp">This PC</div>
+            <button type="button" data-open="settings"><span class="ic" data-ico="settings"></span>About</button>
+            <button type="button" data-open="bin"><span class="ic" data-ico="bin"></span>Recycle Bin</button>
+          </div>
+          <div class="ex-main" id="exmain"></div>
+        </div>
+        <div class="statusbar"><span id="excount">2 items</span><span>Version 2.0 · built with Claude</span></div>
+      </div>
+    </section>
+
+    <!-- MAIL -->
+    <section class="win" id="w-mail" data-app="mail" hidden role="dialog" aria-label="Mail">
+      <div class="wbody">
+        <div class="mail">
+          <div class="mail-side">
+            <button class="btn new" type="button" id="newmail">New Mail</button>
+            <div class="fl on"><span>Drafts</span><small>1</small></div>
+            <div class="fl"><span>Inbox</span><small>0 unread</small></div>
+            <div class="fl"><span>Sent</span><small>you're next</small></div>
+            <div class="fl"><span>Junk</span><small>excuses</small></div>
+            <div class="grp">Elsewhere</div>
+            <a href="https://www.linkedin.com/in/sudhansh-arora/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
+            <a href="https://github.com/Sudhansh3110" target="_blank" rel="noopener">GitHub <span>↗</span></a>
+          </div>
+          <form class="compose" id="compose" novalidate>
+            <div class="field"><label for="m-from">From</label><input id="m-from" name="email" type="email" placeholder="e.g. you@company.com…" autocomplete="email" spellcheck="false"></div>
+            <div class="field"><label for="m-to">To</label><input id="m-to" name="to" value="arorasudhansh31@gmail.com" readonly spellcheck="false"></div>
+            <div class="field"><label for="m-subj">Subject</label><input id="m-subj" name="subject" value="Let’s talk about an AI QA role" autocomplete="off"></div>
+            <textarea id="m-body" name="message" autocomplete="off" aria-label="Message" placeholder="Hi Sudhansh, we're building an AI feature and need someone who will break it before our users do…"></textarea>
+            <div class="sendbar">
+              <button class="btn" type="submit">Send</button>
+              <span class="note" id="m-note">He reads every message. Faster if it mentions AI testing.</span>
+            </div>
+            <div class="sent" id="sent" hidden>
+              <h4>Almost sent</h4>
+              <p>This window can't send mail by itself. Open it in your own email app, or copy the address.</p>
+              <span class="addr" id="addr">arorasudhansh31@gmail.com</span>
+              <div class="acts">
+                <a class="btn" id="mailto" href="mailto:arorasudhansh31@gmail.com">Open in My Email App</a>
+                <button class="btn sec" type="button" id="copyaddr">Copy Address</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- STICKY NOTES: USER STORIES -->
+    <section class="win" id="w-stickies" data-app="stickies" hidden role="dialog" aria-label="User stories">
+      <div class="wbody">
+        <div class="uswrap" id="uswrap">
+          <div class="stickies" id="usboard" aria-label="Product backlog"></div>
+          <aside class="usdetail" id="usdetail" hidden aria-label="Story detail"></aside>
+        </div>
+        <div class="statusbar"><span id="uscount">Backlog</span><span>Click a story for its acceptance criteria</span></div>
+      </div>
+    </section>
+
+    <!-- SETTINGS: ABOUT + ACHIEVEMENTS -->
+    <section class="win" id="w-settings" data-app="settings" hidden role="dialog" aria-label="About">
+      <div class="wbody">
+        <div class="set">
+          <div class="set-side">
+            <div class="me"><img class="avatar" data-photo src="" alt="Sudhansh Arora" width="40" height="40"><div><b>Sudhansh Arora</b><small>Local account · Jaipur</small></div></div>
+            <button type="button" class="on" data-tab="about">System › About</button>
+            <button type="button" data-tab="ach">Achievements</button>
+          </div>
+          <div class="set-main" id="set-about">
+            <h3>About</h3>
+            <div class="spec">
+              <div class="hd">Device specifications</div>
+              <dl>
+                <dt>Device name</dt><dd>SUDHANSH-PC</dd>
+                <dt>Processor</dt><dd>QA Engineer → QA Lead → AI QA Lead</dd>
+                <dt>Installed RAM</dt><dd>5+ years of edge cases, fully indexed</dd>
+                <dt>System type</dt><dd>Human, runs on coffee</dd>
+                <dt>Pen and touch</dt><dd>Prefers a well-written acceptance criterion</dd>
+              </dl>
+            </div>
+            <div class="spec">
+              <div class="hd">SudhanshOS specifications</div>
+              <dl>
+                <dt>Edition</dt><dd>Senior Consultant (AI QA Lead), Xebia</dd>
+                <dt>Version</dt><dd>2.0 (building in public)</dd>
+                <dt>Location</dt><dd>Jaipur, India · open to travel</dd>
+                <dt>Education</dt><dd>B.Tech, Computer Science, Global Institute of Technology</dd>
+                <dt>Known issues</dt><dd>Will test your product even when you only asked for feedback</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="set-main" id="set-ach" hidden>
+            <h3>Achievements</h3>
+            <div class="stats">
+              <div class="stat"><div class="v">5<small>+</small></div><div class="k">Years in QA</div></div>
+              <div class="stat"><div class="v">4</div><div class="k">Companies</div></div>
+              <div class="stat"><div class="v">3</div><div class="k">Certifications</div></div>
+              <div class="stat"><div class="v">82<small>%</small></div><div class="k">Automation coverage at Xebia</div></div>
+            </div>
+            <div class="creds">
+              <div class="cred"><span class="seal">CCA</span><div><b>Claude Certified Associate</b><small>CCAO-F · Anthropic</small></div></div>
+              <div class="cred"><span class="seal">CSM</span><div><b>Certified Scrum Master</b><small>CSM · Scrum Alliance</small></div></div>
+              <div class="cred"><span class="seal">IITK</span><div><b>Professional Certificate in AI &amp; ML</b><small>IIT Kanpur</small></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TASK MANAGER -->
+    <section class="win" id="w-taskmgr" data-app="taskmgr" hidden role="dialog" aria-label="Task Manager">
+      <div class="wbody">
+        <div class="tm">
+          <table>
+            <thead><tr><th>Process</th><th>Status</th><th class="num">CPU</th><th class="num">Memory</th></tr></thead>
+            <tbody id="procs"></tbody>
+          </table>
+        </div>
+        <div class="tm-foot"><span id="cpu-total">CPU 100% · as usual</span><button class="btn sec" type="button" id="endtask">End Task</button></div>
+      </div>
+    </section>
+
+    <!-- RECYCLE BIN -->
+    <section class="win" id="w-bin" data-app="bin" hidden role="dialog" aria-label="Recycle Bin">
+      <div class="wbody">
+        <div class="bin">
+          <table>
+            <thead><tr><th>Name</th><th>Deleted</th><th>Why</th></tr></thead>
+            <tbody id="binrows">
+              <tr><td>Untested_assumptions.txt</td><td>5 years ago</td><td>Tested them. Most were wrong.</td></tr>
+              <tr><td>“It works on my machine”.mp3</td><td>Daily</td><td>Not an acceptance criterion</td></tr>
+              <tr><td>Bugs (production)</td><td>Before release</td><td>Found in testing. That's the job.</td></tr>
+            </tbody>
+          </table>
+          <div><button class="btn sec" type="button" id="emptybin">Empty Recycle Bin</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USER GUIDE -->
+    <section class="win" id="w-guide" data-app="guide" hidden role="dialog" aria-label="User Guide">
+      <div class="wbody">
+        <div class="guide">
+          <div class="gh">
+            <div class="gh-art"><svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#14152A" stroke-width="3" stroke-linecap="round" fill="none"><path d="M16 34 8 30M16 42 7 44M18 49 11 55M48 34 56 30M48 42 57 44M46 49 53 55"/></g><path d="M26 16 20 6M38 16 44 6" stroke="#14152A" stroke-width="3" stroke-linecap="round"/><ellipse cx="32" cy="40" rx="17" ry="18" fill="#FFB020" stroke="#14152A" stroke-width="3"/><path d="M32 23v35" stroke="#14152A" stroke-width="2.5"/><circle cx="24" cy="44" r="3" fill="#14152A"/><circle cx="40" cy="36" r="3" fill="#14152A"/><circle cx="32" cy="20" r="10" fill="#14152A"/><circle cx="28" cy="19" r="3.4" fill="#fff"/><circle cx="36" cy="19" r="3.4" fill="#fff"/><circle cx="28.8" cy="19.4" r="1.6" fill="#14152A"/><circle cx="36.8" cy="19.4" r="1.6" fill="#14152A"/></svg></div>
+            <div class="gh-text">
+              <h3>Get started</h3>
+              <p>Hi, I’m Glitch. I’ll show you around. It takes about a minute. I timed it.</p>
+              <div class="acts"><button type="button" class="btn" id="tourbtn">Take the Tour</button><button type="button" class="btn sec" data-open="notepad">Skip to the CV</button></div>
+            </div>
+          </div>
+
+          <div class="gsec">
+            <div class="gsec-h"><h4>Side quests</h4><span id="qcount">0 of 6</span></div>
+            <div class="qtrack" aria-hidden="true"><i id="qbar"></i></div>
+            <ul class="quests" id="quests"></ul>
+          </div>
+
+          <div class="gsec">
+            <div class="gsec-h"><h4>Shortcuts</h4></div>
+            <div class="keys">
+              <div><kbd>Tab</kbd><span>Move to the next thing</span></div>
+              <div><kbd>Shift</kbd><kbd>Tab</kbd><span>Go back</span></div>
+              <div><kbd>Enter</kbd><span>Open it</span></div>
+              <div><kbd>Esc</kbd><span>Close the top window</span></div>
+              <div><kbd>Right-click</kbd><span>Secret menu</span></div>
+              <div><kbd>← →</kbd><span>Move through the tour</span></div>
+            </div>
+          </div>
+
+          <div class="gsec">
+            <div class="gsec-h"><h4>Send a window, not instructions</h4></div>
+            <p class="gnote">Click a chip to copy a link that opens straight to that window.</p>
+            <div class="lchips">
+              <button type="button" class="lchip" data-hash="#cv" data-name="the CV">#cv</button>
+              <button type="button" class="lchip" data-hash="#projects" data-name="Projects">#projects</button>
+              <button type="button" class="lchip" data-hash="#stories" data-name="the user stories">#stories</button>
+              <button type="button" class="lchip" data-hash="#about" data-name="About me">#about</button>
+              <button type="button" class="lchip" data-hash="#mail" data-name="Mail">#mail</button>
+              <button type="button" class="lchip" data-hash="#guide" data-name="this guide">#guide</button>
+            </div>
+          </div>
+
+          <div class="gsec">
+            <div class="gsec-h"><h4>Easter eggs</h4><span>Spoilers. Click to reveal.</span></div>
+            <div class="eggs">
+              <button type="button" class="egg" aria-expanded="false"><b>The power button</b><span>Press it in the Start menu. He won’t shut down.</span></button>
+              <button type="button" class="egg" aria-expanded="false"><b>Coffee.exe</b><span>Try ending it in Task Manager. Access denied, for everyone’s safety.</span></button>
+              <button type="button" class="egg" aria-expanded="false"><b>View source</b><span>Right-click the desktop. Nice try.</span></button>
+              <button type="button" class="egg" aria-expanded="false"><b>Where Glitch goes</b><span>Press Glitch’s ×, then check the Recycle Bin.</span></button>
+            </div>
+          </div>
+
+          <div class="gfoot">Still lost? <button type="button" class="linkbtn" data-open="mail">Write to him</button>. He replies faster than most chatbots, with fewer hallucinations.</div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="toasts" id="toasts" aria-live="polite"></div>
+
+    <!-- GLITCH: the mascot. Placeholder art; swap the <svg> for the final design. -->
+    <div class="glitch" id="glitch" hidden>
+      <div class="g-bubble" id="gbubble" aria-hidden="true"></div>
+      <button class="g-body" id="gbody" type="button" aria-label="Glitch, the mascot. Click for a comment.">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <g class="g-legs" stroke="#14152A" stroke-width="3" stroke-linecap="round" fill="none">
+            <path d="M16 34 8 30M16 42 7 44M18 49 11 55M48 34 56 30M48 42 57 44M46 49 53 55"/>
+          </g>
+          <path d="M26 16 20 6M38 16 44 6" stroke="#14152A" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="20" cy="6" r="3" fill="#14152A"/><circle cx="44" cy="6" r="3" fill="#14152A"/>
+          <ellipse cx="32" cy="40" rx="17" ry="18" fill="#FFB020" stroke="#14152A" stroke-width="3"/>
+          <path d="M32 23v35" stroke="#14152A" stroke-width="2.5"/>
+          <circle cx="24" cy="44" r="3" fill="#14152A"/><circle cx="40" cy="36" r="3" fill="#14152A"/><circle cx="39" cy="49" r="2.5" fill="#14152A"/>
+          <circle cx="32" cy="20" r="10" fill="#14152A"/>
+          <g class="g-eyes"><circle cx="28" cy="19" r="3.4" fill="#fff"/><circle cx="36" cy="19" r="3.4" fill="#fff"/><circle cx="28.8" cy="19.4" r="1.6" fill="#14152A"/><circle cx="36.8" cy="19.4" r="1.6" fill="#14152A"/></g>
+        </svg>
+      </button>
+      <button class="g-x" id="gclose" type="button" aria-label="Send Glitch to the Recycle Bin">×</button>
+    </div>
+  </div>
+
+  <footer class="taskbar" id="taskbar">
+    <div class="tb-left"><span class="dot"></span><span><b>Open to work</b> · AI QA</span></div>
+    <div class="tb-mid" id="tbmid">
+      <button class="tbtn startbtn" id="startbtn" type="button" aria-label="Start" aria-expanded="false"><span class="logo">S</span></button>
+      <button class="search" id="searchbtn" type="button"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg>Search his skills</button>
+    </div>
+    <div class="tray">
+      <button class="ti coffee" type="button" id="coffee" title="Coffee level" aria-label="Coffee level, click to refill"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2.5 5h8v5a3 3 0 01-3 3h-2a3 3 0 01-3-3V5z"/><path d="M10.5 6.5h1.2a1.8 1.8 0 010 3.6h-1.2"/><path d="M5 1.5v2M7.5 1.5v2"/></svg><span id="coffeepct">72%</span></button>
+      <button class="ti net" type="button" id="net" title="Network"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1.5 6a9.5 9.5 0 0113 0M3.8 8.6a6.2 6.2 0 018.4 0M6 11.2a3 3 0 014 0"/><circle cx="8" cy="13.3" r=".8" fill="currentColor"/></svg></button>
+      <button class="ti themepill" type="button" id="themebtn" aria-label="Switch Light or Dark Theme" title="Switch theme"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="5.5"/><path d="M8 2.5v11" /><path d="M8 2.5a5.5 5.5 0 010 11z" fill="currentColor"/></svg><span id="themelbl">Dark</span></button>
+      <button class="ti" type="button" id="clockbtn" title="Date and time"><span class="clock"><span id="time">--:--</span><span id="date">--</span></span></button>
+    </div>
+  </footer>
+</div>
+
+<div class="start" id="start" hidden role="dialog" aria-label="Start">
+  <div class="st-in">
+    <label class="st-search"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="5"/><path d="M11 11l3.5 3.5"/></svg><input id="stq" type="search" placeholder="Search for apps, skills, excuses…" aria-label="Search"></label>
+    <div class="st-h">Pinned <small id="st-hint">Everything here is clickable</small></div>
+    <div class="pinned" id="pinned"></div>
+    <div class="st-h">Recommended</div>
+    <div class="recs">
+      <button class="rec" type="button" data-open="notepad"><span class="ic" data-ico="notepad"></span><span><b>CV_final_FINAL_v3.txt</b><small>Edited just now</small></span></button>
+      <button class="rec" type="button" data-open="explorer"><span class="ic" data-ico="folder"></span><span><b>Version 2.0</b><small>1 shipped, more in progress</small></span></button>
+      <button class="rec" type="button" data-open="guide"><span class="ic" data-ico="guide"></span><span><b>User Guide</b><small>How to get around</small></span></button>
+      <button class="rec" type="button" data-open="mail"><span class="ic" data-ico="mail"></span><span><b>Draft: Let's talk</b><small>Waiting for you</small></span></button>
+    </div>
+  </div>
+  <div class="st-foot">
+    <div class="me"><img class="avatar" data-photo src="" alt="Sudhansh Arora" width="40" height="40"><div><b>Sudhansh Arora</b><small>AI QA &amp; Governance</small></div></div>
+    <button class="power" type="button" id="power" aria-label="Power"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8 1.5v6"/><path d="M4.5 3.8a5.5 5.5 0 107 0"/></svg></button>
+  </div>
+</div>
+
+<div class="ctx" id="ctx" hidden role="menu"></div>
+<div class="tour" id="tour" hidden role="dialog" aria-modal="true" aria-labelledby="tour-t">
+  <div class="tour-spot" id="tour-spot" aria-hidden="true"></div>
+  <div class="tour-card" id="tour-card">
+    <div class="tc-head"><span class="tc-av" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><g stroke="#14152A" stroke-width="3" stroke-linecap="round" fill="none"><path d="M16 34 8 30M16 42 7 44M18 49 11 55M48 34 56 30M48 42 57 44M46 49 53 55"/></g><path d="M26 16 20 6M38 16 44 6" stroke="#14152A" stroke-width="3" stroke-linecap="round"/><ellipse cx="32" cy="40" rx="17" ry="18" fill="#FFB020" stroke="#14152A" stroke-width="3"/><path d="M32 23v35" stroke="#14152A" stroke-width="2.5"/><circle cx="24" cy="44" r="3" fill="#14152A"/><circle cx="40" cy="36" r="3" fill="#14152A"/><circle cx="32" cy="20" r="10" fill="#14152A"/><circle cx="28" cy="19" r="3.4" fill="#fff"/><circle cx="36" cy="19" r="3.4" fill="#fff"/><circle cx="28.8" cy="19.4" r="1.6" fill="#14152A"/><circle cx="36.8" cy="19.4" r="1.6" fill="#14152A"/></svg></span><span id="tour-n">1 of 8</span><button type="button" class="tc-skip" id="tour-skip">Skip Tour</button></div>
+    <h4 id="tour-t">Tour</h4>
+    <p id="tour-b"></p>
+    <div class="acts"><button type="button" class="btn sec" id="tour-back">Back</button><button type="button" class="btn" id="tour-next">Next</button></div>
+  </div>
+</div>
+<div class="webtip" id="webtip" hidden role="dialog" aria-labelledby="webtip-h">
+  <div class="wt-in">
+    <b id="webtip-h">Best in a real browser</b>
+    <p id="webtip-p">SudhanshOS is a desktop. It works here, but it’s best on a laptop in Chrome, Edge, Safari or Firefox.</p>
+    <div class="wt-acts"><button class="btn" type="button" id="wt-copy">Copy Link</button><button class="btn sec" type="button" id="wt-ok">Continue Here</button></div>
+  </div>
+</div>
+<div class="bsod" id="bsod" hidden role="alertdialog" aria-label="Shut down">
+  <div class="face">:)</div>
+  <h2>SudhanshOS can't shut down. He is still testing something.</h2>
+  <p>Stop code: CURIOSITY_NOT_HANDLED. Nothing is broken. This screen is blue on purpose, which is more than most error screens can say.</p>
+  <button class="btn" type="button" id="restart">Restart</button>
+</div>
+
+<script>
+(function(){
+  var ph = document.querySelector('.wphoto'); document.querySelectorAll('[data-photo]').forEach(function(i){ i.src = ph.src; });
+  try { var st = localStorage.getItem('sos-theme'); if (st) document.documentElement.setAttribute('data-theme', st); } catch(e){}
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(s,r){ return (r||document).querySelector(s); };
+  var $$ = function(s,r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+
+  /* ---------- icons ---------- */
+  var ICO = {
+    folder:'<svg viewBox="0 0 48 40"><path d="M2 6a3 3 0 013-3h13l4 4h21a3 3 0 013 3v4H2z" fill="#E0A526"/><path d="M2 12h44v23a3 3 0 01-3 3H5a3 3 0 01-3-3z" fill="#F7C744"/><path d="M2 12h44v3H2z" fill="#FFD76A"/></svg>',
+    notepad:'<svg viewBox="0 0 40 40"><rect x="7" y="4" width="26" height="33" rx="3" fill="#F4F6FB" stroke="#9AA3BF"/><rect x="7" y="4" width="26" height="7" rx="3" fill="#4C8DF6"/><path d="M12 17h16M12 22h16M12 27h11" stroke="#6B7390" stroke-width="2" stroke-linecap="round"/><circle cx="13" cy="4.5" r="1.6" fill="#1E3A8A"/><circle cx="20" cy="4.5" r="1.6" fill="#1E3A8A"/><circle cx="27" cy="4.5" r="1.6" fill="#1E3A8A"/></svg>',
+    mail:'<svg viewBox="0 0 40 40"><rect x="4" y="9" width="32" height="23" rx="3" fill="#2F7BF5"/><path d="M4.5 11l15.5 11 15.5-11" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>',
+    sticky:'<svg viewBox="0 0 40 40"><path d="M6 6h28v20l-8 8H6z" fill="#FFE072"/><path d="M26 34v-8h8z" fill="#E3B92E"/><path d="M11 13h18M11 18h18M11 23h10" stroke="#8A6D12" stroke-width="2" stroke-linecap="round"/></svg>',
+    settings:'<svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="14" fill="#5B6275"/><circle cx="20" cy="20" r="14" fill="none" stroke="#8B93A8" stroke-width="5" stroke-dasharray="4.4 3"/><circle cx="20" cy="20" r="5.5" fill="#E7EAF2"/></svg>',
+    taskmgr:'<svg viewBox="0 0 40 40"><rect x="5" y="6" width="30" height="28" rx="3" fill="#1F9D6B"/><path d="M9 25l6-7 5 5 6-9 5 4" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    bin:'<svg viewBox="0 0 40 40"><path d="M10 12h20l-2 23H12z" fill="#D8DDEA" stroke="#8C95AD"/><path d="M8 12h24M16 8h8" stroke="#8C95AD" stroke-width="2" stroke-linecap="round"/><path d="M15 17v13M20 17v13M25 17v13" stroke="#A8B0C4" stroke-width="1.6"/></svg>',
+    link:'<svg viewBox="0 0 40 40"><rect x="5" y="5" width="30" height="30" rx="6" fill="#0A66C2"/><text x="20" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="17" fill="#fff">in</text></svg>',
+    gh:'<svg viewBox="0 0 40 40"><rect x="5" y="5" width="30" height="30" rx="6" fill="#24292F"/><text x="20" y="26" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="13" fill="#fff">GH</text></svg>',
+    guide:'<svg viewBox="0 0 40 40"><rect x="7" y="5" width="26" height="31" rx="3" fill="#0F8A70"/><rect x="7" y="5" width="5" height="31" rx="2" fill="#0B6B57"/><text x="22.5" y="27" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="17" fill="#fff">?</text></svg>',
+    info:'<svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="9" style="fill:var(--accent)"/><path d="M10 9v5M10 6v.5" style="stroke:var(--accent-ink)" stroke-width="2" stroke-linecap="round"/></svg>',
+    warn:'<svg viewBox="0 0 20 20"><path d="M10 2l8.5 15h-17z" style="fill:var(--warn)"/><path d="M10 8v4M10 14.5v.3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>'
+  };
+  function fillIcons(root){ $$('[data-ico]',root).forEach(function(el){ el.innerHTML = ICO[el.getAttribute('data-ico')] || ''; }); }
+
+  /* ---------- apps ---------- */
+  var APPS = {
+    notepad:{title:'CV_final_FINAL_v3.txt - Notepad', label:'CV_final_FINAL_v3.txt', ico:'notepad', w:640, h:560, x:.20, y:.05},
+    explorer:{title:'Version 2.0 - File Explorer', label:'Projects', ico:'folder', w:720, h:520, x:.24, y:.10},
+    guide:{title:'User Guide - Get Started', label:'User Guide', ico:'guide', w:760, h:600, x:.26, y:.05},
+    stickies:{title:'Sticky Notes - Product backlog', label:'User stories', ico:'sticky', w:1000, h:600, x:.14, y:.05},
+    mail:{title:'New message - Mail', label:'Mail', ico:'mail', w:780, h:520, x:.34, y:.08},
+    settings:{title:'Settings', label:'About me', ico:'settings', w:760, h:540, x:.24, y:.12},
+    taskmgr:{title:'Task Manager', label:'Task Manager', ico:'taskmgr', w:600, h:420, x:.40, y:.18},
+    bin:{title:'Recycle Bin', label:'Recycle Bin', ico:'bin', w:620, h:360, x:.36, y:.22}
+  };
+  var ORDER = ['explorer','notepad','guide','stickies','settings','mail','taskmgr','bin'];
+  var TASKBAR = ['explorer','notepad','stickies','mail','settings'];
+
+  var desktop = $('#desktop'), icons = $('#icons'), tbmid = $('#tbmid');
+  var zTop = 20, state = {};
+
+  /* desktop icons */
+  ORDER.forEach(function(id){
+    var b = document.createElement('button');
+    b.className = 'dicon'; b.type = 'button'; b.setAttribute('data-open', id);
+    b.innerHTML = '<span class="ic">' + ICO[APPS[id].ico] + '</span><span>' + APPS[id].label + '</span>';
+    icons.appendChild(b);
+  });
+  var li = document.createElement('a');
+  li.className = 'dicon'; li.href = 'https://www.linkedin.com/in/sudhansh-arora/'; li.target = '_blank'; li.rel = 'noopener';
+  li.innerHTML = '<span class="ic">' + ICO.link + '</span><span>LinkedIn</span>';
+  icons.appendChild(li);
+  var gh = document.createElement('a');
+  gh.className = 'dicon'; gh.href = 'https://github.com/Sudhansh3110'; gh.target = '_blank'; gh.rel = 'noopener';
+  gh.innerHTML = '<span class="ic">' + ICO.gh + '</span><span>GitHub</span>';
+  icons.appendChild(gh);
+
+  /* taskbar buttons */
+  TASKBAR.forEach(function(id){
+    var b = document.createElement('button');
+    b.className = 'tbtn'; b.type = 'button'; b.id = 'tb-' + id; b.title = APPS[id].label;
+    b.setAttribute('aria-label', APPS[id].label);
+    b.innerHTML = '<span class="ic">' + ICO[APPS[id].ico] + '</span>';
+    b.addEventListener('click', function(){ taskbarClick(id); });
+    tbmid.appendChild(b);
+  });
+
+  /* start menu pins */
+  var pinned = $('#pinned');
+  ORDER.forEach(function(id){
+    var b = document.createElement('button');
+    b.className = 'pin'; b.type = 'button'; b.setAttribute('data-open', id); b.setAttribute('data-name', (APPS[id].label + ' ' + APPS[id].title).toLowerCase());
+    b.innerHTML = '<span class="ic">' + ICO[APPS[id].ico] + '</span><span>' + APPS[id].label + '</span>';
+    pinned.appendChild(b);
+  });
+
+  /* build window chrome */
+  Object.keys(APPS).forEach(function(id){
+    var w = $('#w-' + id), a = APPS[id];
+    var tb = document.createElement('header');
+    tb.className = 'titlebar';
+    tb.innerHTML = '<span class="ic">' + ICO[a.ico] + '</span><span class="t">' + a.title + '</span>' +
+      '<div class="ctl">' +
+      '<button type="button" data-act="min" aria-label="Minimize"><svg viewBox="0 0 10 10"><path d="M0 5h10" stroke="currentColor"/></svg></button>' +
+      '<button type="button" class="mx" data-act="max" aria-label="Maximize"><svg viewBox="0 0 10 10"><rect x=".5" y=".5" width="9" height="9" fill="none" stroke="currentColor"/></svg></button>' +
+      '<button type="button" class="x" data-act="close" aria-label="Close"><svg viewBox="0 0 10 10"><path d="M0 0l10 10M10 0L0 10" stroke="currentColor"/></svg></button></div>';
+    w.insertBefore(tb, w.firstChild);
+    state[id] = {open:false, min:false};
+    w.addEventListener('pointerdown', function(){ focusWin(id); });
+    tb.addEventListener('click', function(e){
+      var act = e.target.closest('[data-act]'); if (!act) return;
+      e.stopPropagation();
+      var k = act.getAttribute('data-act');
+      if (k === 'close') closeWin(id);
+      else if (k === 'min') minWin(id);
+      else w.classList.toggle('max');
+    });
+    tb.addEventListener('dblclick', function(e){ if (!e.target.closest('[data-act]')) w.classList.toggle('max'); });
+    drag(w, tb);
+  });
+  fillIcons(document);
+
+  function place(id){
+    var w = $('#w-' + id), a = APPS[id], r = desktop.getBoundingClientRect();
+    var W = Math.min(a.w, r.width - 24), H = Math.min(a.h, r.height - 24);
+    w.style.width = W + 'px'; w.style.height = H + 'px';
+    var x = Math.max(8, Math.min(r.width * a.x, r.width - W - 8));
+    var y = Math.max(8, Math.min(r.height * a.y, r.height - H - 8));
+    if (r.width > 900) x = Math.max(x, 110);
+    w.style.left = x + 'px'; w.style.top = y + 'px';
+    w._placed = true;
+  }
+  function openWin(id){
+    var w = $('#w-' + id); if (!w) return;
+    closeStart();
+    if (!w._placed) place(id);
+    var wasHidden = w.hidden;
+    if (w._closeT){ clearTimeout(w._closeT); w._closeT = null; }
+    w.classList.remove('closing');
+    w.hidden = false; state[id].open = true; state[id].min = false;
+    if (wasHidden && !reduce){ w.classList.remove('opening'); void w.offsetWidth; w.classList.add('opening'); }
+    focusWin(id);
+    if (!w.hasAttribute('tabindex')) w.setAttribute('tabindex','-1');
+    try { w.focus({preventScroll:true}); } catch(e){}
+    if (id === 'explorer' && !exmain.innerHTML) renderExplorer('root');
+  }
+  function hideWin(w, done){
+    if (reduce){ w.hidden = true; done && done(); return; }
+    if (w._closeT) return;
+    w.classList.remove('opening');
+    w.classList.add('closing');
+    w._closeT = setTimeout(function(){ w._closeT = null; w.classList.remove('closing'); w.hidden = true; done && done(); }, 190);
+  }
+  function closeWin(id){ var w = $('#w-' + id); state[id].open = false; state[id].min = false; hideWin(w); syncTaskbar(); }
+  function minWin(id){ var w = $('#w-' + id); state[id].min = true; hideWin(w); syncTaskbar(); }
+  var focused = null;
+  function focusWin(id){
+    var w = $('#w-' + id);
+    w.style.zIndex = ++zTop; focused = id;
+    $$('.win').forEach(function(x){ x.classList.toggle('inactive', x !== w); });
+    syncTaskbar();
+  }
+  function taskbarClick(id){
+    var s = state[id];
+    if (s.open && !s.min && focused === id) minWin(id);
+    else openWin(id);
+  }
+  function syncTaskbar(){
+    TASKBAR.forEach(function(id){
+      var b = $('#tb-' + id), s = state[id];
+      b.classList.toggle('open', s.open);
+      b.classList.toggle('focus', s.open && !s.min && focused === id);
+    });
+  }
+  function drag(w, handle){
+    var sx, sy, ox, oy, on = false;
+    handle.addEventListener('pointerdown', function(e){
+      if (e.target.closest('[data-act]') || w.classList.contains('max') || innerWidth <= 700) return;
+      on = true; sx = e.clientX; sy = e.clientY; ox = w.offsetLeft; oy = w.offsetTop;
+      handle.setPointerCapture(e.pointerId);
+    });
+    handle.addEventListener('pointermove', function(e){
+      if (!on) return;
+      var r = desktop.getBoundingClientRect();
+      var nx = Math.max(-w.offsetWidth + 120, Math.min(ox + e.clientX - sx, r.width - 120));
+      var ny = Math.max(0, Math.min(oy + e.clientY - sy, r.height - 40));
+      w.style.left = nx + 'px'; w.style.top = ny + 'px';
+    });
+    handle.addEventListener('pointerup', function(){ on = false; });
+    handle.addEventListener('pointercancel', function(){ on = false; });
+  }
+
+  /* global open handlers */
+  document.addEventListener('click', function(e){
+    var o = e.target.closest('[data-open]');
+    if (o){ openWin(o.getAttribute('data-open')); }
+    var j = e.target.closest('[data-joke]');
+    if (j){
+      var jokes = {file:['File','Save is disabled. The CV is already final. FINAL. v3.'], edit:['Edit','Undo is not available. He stands by his test cases.'], view:['View','Zoom to 200% to see the attention to detail.']};
+      var k = jokes[j.getAttribute('data-joke')]; toast('info', k[0], k[1]);
+    }
+    if (!e.target.closest('#ctx')) hideCtx();
+    if (!e.target.closest('#start') && !e.target.closest('#startbtn') && !e.target.closest('#searchbtn')) closeStart();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      if (!$('#start').hidden){ closeStart(); return; }
+      if (!$('#ctx').hidden){ hideCtx(); return; }
+      if (focused && state[focused].open && !state[focused].min) closeWin(focused);
+    }
+  });
+
+  /* ---------- start menu ---------- */
+  var start = $('#start'), startbtn = $('#startbtn');
+  function toggleStart(focusSearch){
+    if (start.hidden){
+      start.hidden = false; startbtn.setAttribute('aria-expanded','true');
+      if (!reduce){ start.classList.remove('opening'); void start.offsetWidth; start.classList.add('opening'); }
+      $('#stq').value = ''; filterPins('');
+      if (focusSearch) setTimeout(function(){ $('#stq').focus(); }, 30);
+    } else closeStart();
+  }
+  function closeStart(){ if (!start.hidden){ start.hidden = true; startbtn.setAttribute('aria-expanded','false'); } }
+  startbtn.addEventListener('click', function(){ toggleStart(false); });
+  $('#searchbtn').addEventListener('click', function(){ toggleStart(true); });
+  function filterPins(q){
+    var n = 0;
+    $$('.pin', pinned).forEach(function(p){ var m = !q || p.getAttribute('data-name').indexOf(q) > -1; p.hidden = !m; if (m) n++; });
+    var skills = ['testing','test','qa','governance','ai','llm','evaluation','hallucination','analysis','ba','user stories','acceptance','power platform','appian','gpt','claude','selenium','appium','postman','python','scrum','azure devops','jira'];
+    var hit = skills.some(function(s){ return q && (s.indexOf(q) === 0 || q.indexOf(s) === 0); });
+    if (hit && q.length > 1) quest('search');
+    $('#st-hint').textContent = !q ? 'Everything here is clickable' : hit ? 'Skill found. Open the CV for proof.' : n ? n + ' result' + (n>1?'s':'') : q.indexOf('excuse') > -1 ? 'No excuses found. By design.' : 'Not found. Probably not a skill he claims.';
+  }
+  $('#stq').addEventListener('input', function(e){ filterPins(e.target.value.trim().toLowerCase()); });
+  $('#stq').addEventListener('keydown', function(e){ if (e.key === 'Enter'){ var p = $$('.pin', pinned).filter(function(x){ return !x.hidden; })[0]; if (p) openWin(p.getAttribute('data-open')); } });
+
+  /* power -> blue screen */
+  $('#power').addEventListener('click', function(){ closeStart(); $('#bsod').hidden = false; $('#restart').focus(); });
+  $('#restart').addEventListener('click', function(){ $('#bsod').hidden = true; boot(true); });
+
+  /* ---------- context menu ---------- */
+  var ctx = $('#ctx');
+  var CTX = [
+    ['Refresh','fixes nothing, as usual', function(){ toast('info','Refreshed','Nothing changed. Just like when you refresh a failing test.'); }],
+    ['View source','nice try', function(){ toast('warn','Access denied','Source is closed. His calendar is open, though.'); openWin('mail'); }],
+    null,
+    ['New › Opportunity','', function(){ openWin('mail'); }],
+    ['Open CV','', function(){ openWin('notepad'); }],
+    ['Personalize','', function(){ toggleTheme(); }]
+  ];
+  function isDark(){ var d = document.documentElement; return d.getAttribute('data-theme') === 'dark' || (!d.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches); }
+  function syncThemeLbl(){ var l = $('#themelbl'); if (l) l.textContent = isDark() ? 'Light' : 'Dark'; }
+  function toggleTheme(){ quest('theme'); var d = document.documentElement; var dark = d.getAttribute('data-theme') === 'dark' || (!d.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches); d.setAttribute('data-theme', dark ? 'light' : 'dark'); try { localStorage.setItem('sos-theme', dark ? 'light' : 'dark'); } catch(e){} syncThemeLbl(); toast('info','Theme changed', dark ? 'Light mode. Bugs have nowhere to hide.' : 'Dark mode. Bugs still have nowhere to hide.'); }
+  $('#themebtn').addEventListener('click', toggleTheme); syncThemeLbl();
+  desktop.addEventListener('contextmenu', function(e){
+    if (e.target.closest('.win')) return;
+    e.preventDefault(); quest('rightclick');
+    ctx.innerHTML = '';
+    CTX.forEach(function(it){
+      if (!it){ ctx.appendChild(document.createElement('hr')); return; }
+      var b = document.createElement('button'); b.type = 'button'; b.setAttribute('role','menuitem');
+      b.innerHTML = '<span>' + it[0] + '</span><small>' + it[1] + '</small>';
+      b.addEventListener('click', function(){ hideCtx(); it[2](); });
+      ctx.appendChild(b);
+    });
+    ctx.hidden = false;
+    var r = desktop.getBoundingClientRect();
+    ctx.style.left = Math.min(e.clientX, r.right - ctx.offsetWidth - 8) + 'px';
+    ctx.style.top = Math.min(e.clientY, r.bottom - ctx.offsetHeight - 8) + 'px';
+  });
+  function hideCtx(){ ctx.hidden = true; }
+
+  /* ---------- toasts ---------- */
+  function dropToast(t){
+    if (!t || t._out) return; t._out = true;
+    if (reduce){ t.remove(); return; }
+    t.classList.add('out');
+    setTimeout(function(){ t.remove(); }, 260);
+  }
+  function toast(kind, title, text, actions, ms){
+    var t = document.createElement('div'); t.className = 'toast';
+    t.innerHTML = '<span class="ic">' + ICO[kind === 'warn' ? 'warn' : 'info'] + '</span><div><b></b><p></p><div class="acts"></div></div><button class="x" type="button" aria-label="Dismiss">✕</button>';
+    $('b', t).textContent = title; $('p', t).textContent = text;
+    var acts = $('.acts', t);
+    (actions || []).forEach(function(a){ var b = document.createElement('button'); b.type = 'button'; b.className = 'btn' + (a.sec ? ' sec' : ''); b.textContent = a.label; b.addEventListener('click', function(){ a.fn(); dropToast(t); }); acts.appendChild(b); });
+    if (!actions) acts.remove();
+    $('.x', t).addEventListener('click', function(){ dropToast(t); });
+    var box = $('#toasts'); box.appendChild(t);
+    while (box.children.length > 3) box.firstChild.remove();
+    setTimeout(function(){ dropToast(t); }, ms || 6500);
+  }
+
+  /* ---------- explorer ---------- */
+  var PROJECTS = [
+    {id:'prs', name:'Prompt Regression Suite', type:'AI QA · Automation', story:'As a <b>product owner</b>, I want every prompt change tested against past answers, so that a fix never quietly breaks something else.', gwt:['<b>Given</b> a saved set of past answers','<b>When</b> a prompt changes','<b>Then</b> answers that drift are flagged in under 2 minutes']},
+    {id:'bias', name:'Bias Audit Board', type:'AI Governance · Dashboard', story:'As a <b>compliance lead</b>, I want answers scored for fairness across user groups, so that I can sign off with evidence.', gwt:['<b>Given</b> the same question from different user groups','<b>When</b> the model answers','<b>Then</b> each group gets a fairness score and an audit trail']},
+    {id:'src', name:'Source Checker', type:'Hallucination testing', story:'As a <b>support agent</b>, I want each AI answer linked to its source, so that I trust it before a customer does.', gwt:['<b>Given</b> an AI answer with several claims','<b>When</b> it is checked','<b>Then</b> every claim shows a source or gets highlighted']},
+    {id:'forge', name:'Story Forge', type:'Business analysis · AI assist', story:'As a <b>business analyst</b>, I want meeting notes turned into draft user stories, so that I spend my time refining, not typing.', gwt:['<b>Given</b> raw meeting notes','<b>When</b> they are uploaded','<b>Then</b> draft stories come back in Given/When/Then']},
+    {id:'next', name:'New folder', type:'Next build', story:'', gwt:[]}
+  ];
+  var currentFolder = 'root';
+  var exmain = $('#exmain'), crumb = $('#crumb');
+  var SHIPPED = {
+    name:'Portfolio Sites', type:'Web · Built with Claude · Shipped',
+    about:'This desktop: an AI QA portfolio built as a working operating system. Versions for AI Governance and Business Analysis are in progress.',
+    story:'As a <b>hiring manager</b>, I want to see how a QA lead thinks, not just read a CV, so that I can judge fit before the first call.',
+    gwt:['<b>Given</b> a recruiter opens the link','<b>When</b> the page loads','<b>Then</b> the CV is already open and contact details are one click away','<b>And</b> it works on a phone, in light or dark mode, and with only a keyboard'],
+    did:'Wrote the user stories and acceptance criteria first, then built the site and tested it the way he tests products: accessibility, keyboard use, both themes, phone layouts, and every link checked with Playwright.',
+    stack:'HTML, CSS, JavaScript · Claude · Playwright · GitHub'
+  };
+  function renderExplorer(fid){
+    currentFolder = fid || 'root';
+    var base = '<button type="button" data-nav="root">This PC</button><span class="sep">›</span><button type="button" data-nav="root">Version 2.0</button>';
+    if (currentFolder === 'portfolio'){
+      quest('project');
+      var p = SHIPPED;
+      crumb.innerHTML = base + '<span class="sep">›</span><span>' + p.name + '</span>';
+      exmain.innerHTML = '<div class="detail"><span class="tag ok">Shipped</span><h3>' + p.name + '</h3><p>' + p.about + '</p>' +
+        '<div class="card"><div class="lbl">User story</div><blockquote>' + p.story + '</blockquote></div>' +
+        '<div class="card"><div class="lbl">Acceptance criteria</div><ul class="gwt">' + p.gwt.map(function(g){ return '<li>' + g + '</li>'; }).join('') + '</ul></div>' +
+        '<div class="card"><div class="lbl">Feature stories</div><p class="fs">The whole site is written up as a product backlog: 24 user stories across 5 epics, each with acceptance criteria.</p><button type="button" class="btn sec" data-open="stickies">Open the Backlog</button></div>' +
+        '<dl class="props"><dt>What he did</dt><dd>' + p.did + '</dd><dt>Built with</dt><dd>' + p.stack + '</dd><dt>Status</dt><dd>Live. You are using it.</dd></dl>' +
+        '<div class="acts"><a class="btn" href="https://github.com/Sudhansh3110" target="_blank" rel="noopener">View on GitHub</a><button type="button" class="btn sec" data-nav="root">Back to Version 2.0</button></div></div>';
+      $('#excount').textContent = '1 item selected';
+      return;
+    }
+    if (currentFolder === 'uc'){
+      crumb.innerHTML = base + '<span class="sep">›</span><span>More builds</span>';
+      exmain.innerHTML = '<div class="uc"><div class="tape" aria-hidden="true"></div><span class="big">Under construction</span>' +
+        '<p>The next Version 2.0 projects are being built now. Each one ships here with its user story and acceptance criteria.</p>' +
+        '<ul class="gwt"><li><b>Given</b> the projects are in progress</li><li><b>When</b> each one is tested and shipped</li><li><b>Then</b> it appears in this folder</li></ul>' +
+        '<div class="acts"><a class="btn" href="https://github.com/Sudhansh3110" target="_blank" rel="noopener">View on GitHub</a><button type="button" class="btn sec" data-nav="root">Back to Version 2.0</button></div></div>';
+      $('#excount').textContent = '1 item selected';
+      return;
+    }
+    crumb.innerHTML = base;
+    exmain.innerHTML = '<div class="folders">' +
+      '<button type="button" class="folder" data-folder="portfolio"><span class="ic">' + ICO.folder + '</span><span>Portfolio Sites</span><small>Shipped</small></button>' +
+      '<button type="button" class="folder" data-folder="uc"><span class="ic">' + ICO.folder + '</span><span>More builds</span><small>Under construction</small></button></div>';
+    $('#excount').textContent = '2 items';
+  }
+  $('#w-explorer').addEventListener('click', function(e){
+    var f = e.target.closest('[data-folder]'); if (f){ renderExplorer(f.getAttribute('data-folder')); return; }
+    var n = e.target.closest('[data-nav]'); if (n){ $('#exsearch').value = ''; renderExplorer('root'); }
+  });
+  $('#exsearch').addEventListener('input', function(e){ renderExplorer('root'); });
+
+  /* ---------- settings tabs ---------- */
+  $$('[data-tab]').forEach(function(b){
+    b.addEventListener('click', function(){
+      $$('[data-tab]').forEach(function(x){ x.classList.toggle('on', x === b); });
+      var ach = b.getAttribute('data-tab') === 'ach';
+      $('#set-about').hidden = ach; $('#set-ach').hidden = !ach;
+    });
+  });
+
+  /* ---------- task manager ---------- */
+  var PROCS = [
+    ['Finding edge cases', 31, '1.2 GB'],
+    ['Writing evaluation rubrics', 22, '640 MB'],
+    ['Asking “but what if the user…”', 18, '512 MB'],
+    ['Reading AI output twice', 14, '890 MB'],
+    ['Coffee.exe', 9, '1 mug'],
+    ['Learning governance frameworks', 6, '720 MB'],
+    ['Excuses.exe', 0, '0 KB', true]
+  ];
+  var procs = $('#procs'), selRow = null;
+  function drawProcs(){
+    procs.innerHTML = PROCS.map(function(p, i){
+      var cpu = p[3] ? 0 : Math.max(1, Math.round(p[1] + (Math.random() * 6 - 3)));
+      return '<tr tabindex="0" data-i="' + i + '"' + (selRow === i ? ' class="sel"' : '') + '><td>' + p[0] + '</td><td><span class="st' + (p[3] ? ' bad' : '') + '">' + (p[3] ? 'Not found' : 'Running') + '</span></td><td class="num cpu"><i style="width:' + cpu + '%"></i><span>' + cpu + '%</span></td><td class="num">' + p[2] + '</td></tr>';
+    }).join('');
+  }
+  drawProcs();
+  setInterval(function(){ if (state.taskmgr.open && !state.taskmgr.min && !procs.contains(document.activeElement)) drawProcs(); }, 1500);
+  function pick(tr){ selRow = +tr.getAttribute('data-i'); drawProcs(); var t = procs.querySelector('tr[data-i="' + selRow + '"]'); if (t) t.focus(); }
+  procs.addEventListener('click', function(e){ var tr = e.target.closest('tr'); if (tr) pick(tr); });
+  procs.addEventListener('keydown', function(e){ var tr = e.target.closest('tr'); if (tr && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); pick(tr); } });
+  $('#endtask').addEventListener('click', function(){
+    if (selRow === null){ toast('info','Select a process first','Even end task has acceptance criteria.'); return; }
+    var p = PROCS[selRow];
+    if (p[3]) toast('warn','Nothing to end','Excuses.exe was never running.');
+    else if (p[0] === 'Coffee.exe') toast('warn','Access denied','Coffee.exe is a critical system process.');
+    else toast('warn','Access denied','“' + p[0] + '” is load-bearing. Ending it would make him a worse tester.');
+  });
+
+  /* ---------- recycle bin ---------- */
+  $('#emptybin').addEventListener('click', function(){ toast('warn','Can’t empty','Some lessons are worth keeping.'); });
+
+  /* ---------- mail ---------- */
+  var ADDR = 'arorasudhansh31@gmail.com';
+  $('#newmail').addEventListener('click', function(){ $('#m-body').value = ''; $('#sent').hidden = true; $('#m-from').focus(); });
+  $('#compose').addEventListener('submit', function(e){
+    e.preventDefault();
+    var from = $('#m-from').value.trim(), note = $('#m-note');
+    if (!/^\S+@\S+\.\S+$/.test(from)){ note.textContent = 'Add your email in From so he can reply. Input validation: he tested this too.'; $('#m-from').focus(); return; }
+    if (!$('#m-body').value.trim()){ note.textContent = 'Empty message. Bold, but give him something to work with.'; $('#m-body').focus(); return; }
+    note.textContent = 'Looks good. Pick how to send it below.';
+    var href = 'mailto:' + ADDR + '?subject=' + encodeURIComponent($('#m-subj').value) + '&body=' + encodeURIComponent($('#m-body').value + '\n\n- ' + from);
+    $('#mailto').setAttribute('href', href);
+    $('#sent').hidden = false;
+  });
+  $('#copyaddr').addEventListener('click', function(){
+    var b = this;
+    function sel(){ var r = document.createRange(); r.selectNodeContents($('#addr')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected, press Ctrl+C'; }
+    try { navigator.clipboard.writeText(ADDR).then(function(){ b.textContent = 'Copied'; setTimeout(function(){ b.textContent = 'Copy Address'; }, 1600); }, sel); } catch(err){ sel(); }
+  });
+
+  /* ---------- tray ---------- */
+  var coffee = 72;
+  setInterval(function(){ coffee = Math.max(4, coffee - 1); $('#coffeepct').textContent = coffee + '%'; if (coffee === 20) toast('warn','Coffee low','Performance may drop. Please refill Sudhansh.'); }, 9000);
+  $('#coffee').addEventListener('click', function(){ coffee = 100; $('#coffeepct').textContent = '100%'; toast('info','Coffee refilled','All systems nominal. Tests will now pass 3% faster.'); });
+  $('#net').addEventListener('click', function(){ toast('info','Connected','Network: LinkedIn. Signal strength: open to work.'); });
+  $('#clockbtn').addEventListener('click', function(){ toast('info','Jaipur time', 'It’s ' + fmt(new Date(), true) + ' where he is. Probably testing something.'); });
+  function fmt(d, ist){
+    var o = {hour:'2-digit', minute:'2-digit'}; if (ist) o.timeZone = 'Asia/Kolkata';
+    try { return d.toLocaleTimeString([], o); } catch(e){ return d.toLocaleTimeString(); }
+  }
+  function tick(){ var d = new Date(); $('#time').textContent = fmt(d); $('#date').textContent = d.toLocaleDateString(); }
+  tick(); setInterval(tick, 15000);
+
+/* ---------- product backlog: every feature of SudhanshOS as a user story ---------- */
+var EPICS = [
+  {id:'E1', name:'First impression', c:'s1'},
+  {id:'E2', name:'Getting around', c:'s4'},
+  {id:'E3', name:'The proof', c:'s2'},
+  {id:'E4', name:'Works for everyone', c:'s5'},
+  {id:'E5', name:'Personality', c:'s3'}
+];
+var STORIES = [
+  {id:'US-01', e:'E1', t:'Boot screen', as:'first-time visitor', want:'a short boot screen I can skip', so:'the site sets the tone without wasting my time', p:'Could', pts:2,
+   ac:[['First visit','I open the site for the first time','it loads','a boot screen runs for under 2 seconds'],['In a hurry','the boot screen is running','I click anywhere','it skips straight to the desktop'],['Coming back','I have already seen it this visit','I reload','the desktop opens directly']],
+   note:'Watched once, charming. Watched twice, a bug.'},
+  {id:'US-02', e:'E1', t:'CV opens on load', as:'recruiter', want:'the CV already open when the desktop appears', so:'I don’t have to hunt for it', p:'Must', pts:3,
+   ac:[['Desktop','I open the site','the desktop appears','the CV is open and in front'],['Phone','I am on a phone','the CV opens','it fills the screen and the text wraps cleanly'],['Menus','the CV is open','I click File, Edit or View','I get a comment instead of a menu']],
+   note:'Hide-and-seek is not a hiring process.'},
+  {id:'US-03', e:'E1', t:'Status card', as:'hiring manager', want:'to see who he is and whether he is available at a glance', so:'I know in five seconds if it is worth reading on', p:'Must', pts:2,
+   ac:[['At a glance','I am on a laptop or larger screen','the desktop loads','the card shows his photo, name, role and “Open to work”'],['Next step','I am reading the card','I press Open CV or Email Him','that window opens']],
+   note:'The only part of the site with no jokes. Almost.'},
+  {id:'US-04', e:'E1', t:'Notifications', as:'visitor', want:'short welcome and update notices', so:'I know where to start and what is new', p:'Should', pts:2,
+   ac:[['Welcome','the desktop has just opened','the boot screen ends','a welcome note offers the User Guide'],['Update','I have been here nine seconds','nothing else is happening','a note announces the latest shipped project'],['Dismiss','a notice is showing','I press × or wait','it goes away']],
+   note:'No notification asks to install updates. We are not monsters.'},
+  {id:'US-05', e:'E2', t:'Desktop icons', as:'visitor', want:'an icon for every app and profile', so:'everything is one click away', p:'Must', pts:2,
+   ac:[['Apps','I am on the desktop','I click an icon','its app opens in front'],['Profiles','I am on the desktop','I click LinkedIn or GitHub','the profile opens in a new tab']],
+   note:'Single click. This is not 2003.'},
+  {id:'US-06', e:'E2', t:'Windows', as:'visitor', want:'windows that behave like a real desktop', so:'I don’t need instructions', p:'Must', pts:5,
+   ac:[['Move','a window is open','I drag its title bar','the window moves with me'],['Controls','a window is open','I press −, □ or ×','it minimises, maximises or closes'],['Focus','several windows are open','I click one','it comes to the front and its taskbar icon lights up']],
+   note:'Tested more times than most real window managers.'},
+  {id:'US-07', e:'E2', t:'Start menu and search', as:'visitor', want:'a Start menu with search', so:'I can check a skill without reading everything', p:'Should', pts:3,
+   ac:[['Open','I am anywhere on the desktop','I press the S button','pinned apps and recommended files appear'],['Skill check','the Start menu is open','I type a skill such as “LLM”','it tells me whether he has it'],['Shortcut','there are search results','I press Enter','the first result opens']],
+   note:'Searching “excuses” returns nothing. By design.'},
+  {id:'US-08', e:'E2', t:'Right-click menu', as:'curious visitor', want:'a right-click menu on the desktop', so:'there is something to find if I poke around', p:'Could', pts:1,
+   ac:[['Open','I am on the desktop','I right-click empty space','a menu shows Refresh, View source, New Opportunity, Open CV and Personalize'],['Use','the menu is open','I pick an option','something happens, even if it is a joke']],
+   note:'Refresh fixes nothing. Just like real life.'},
+  {id:'US-09', e:'E2', t:'Direct links', as:'recruiter sharing with a team', want:'links that open a specific window', so:'nobody has to follow my instructions', p:'Should', pts:2,
+   ac:[['Share','I have a link ending in #cv, #projects, #stories, #about, #mail or #guide','someone opens it','that window is already open'],['Copy','I am in the User Guide','I click a link chip','the full link is copied']],
+   note:'Fewer “click the folder, no, the other folder” calls.'},
+  {id:'US-10', e:'E2', t:'User Guide and tour', as:'first-time visitor', want:'a guide with a short tour', so:'I don’t need an IT ticket to find the CV', p:'Should', pts:3,
+   ac:[['Tour','I open the User Guide','I press Take the Tour','each part of the screen is highlighted and explained in turn'],['Quests','I am exploring','I do something on the quest list','it ticks itself off and the progress bar moves']],
+   note:'Narrated by Glitch, who insisted.'},
+  {id:'US-11', e:'E3', t:'Projects', as:'hiring manager', want:'projects filed like real folders', so:'I open the proof, not just read the claims', p:'Must', pts:3,
+   ac:[['Shipped work','I open Projects','I click a folder','I see its user story, acceptance criteria and status'],['Honesty','a project is still being built','I open its folder','it is clearly marked Under construction']],
+   note:'Adjectives were not accepted as evidence.'},
+  {id:'US-12', e:'E3', t:'User stories board', as:'hiring manager', want:'the site’s own backlog in proper story format', so:'I can see how he writes requirements', p:'Should', pts:3,
+   ac:[['Backlog','I open User stories','the board loads','stories are grouped by epic with priority, points and status'],['Detail','I am on the board','I click a story','its scenarios open beside it']],
+   note:'Yes, this story describes the board you are reading. Recursion is a feature.'},
+  {id:'US-13', e:'E3', t:'About and achievements', as:'recruiter', want:'his specs and achievements in one place', so:'I can hold him up against the job description', p:'Should', pts:2,
+   ac:[['Specs','I open About me','the page loads','I see his role, experience, location and education'],['Numbers','I open the Achievements tab','it loads','I see key numbers and all three certifications']],
+   note:'Installed RAM: five years of edge cases.'},
+  {id:'US-14', e:'E3', t:'Mail', as:'recruiter', want:'to write to him without leaving the site', so:'the conversation starts before I get distracted', p:'Must', pts:3,
+   ac:[['Validation','I have not added my email','I press Send','it tells me exactly what is missing'],['Send','my message is complete','I press Send','I can open it in my email app or copy his address']],
+   note:'Carrier pigeons are not yet supported.'},
+  {id:'US-15', e:'E4', t:'Light and dark mode', as:'night-owl reviewer', want:'light and dark modes', so:'reading his CV at 1 a.m. doesn’t hurt', p:'Should', pts:2,
+   ac:[['Switch','I am anywhere on the desktop','I press the theme button','every window switches'],['Memory','I switched theme earlier','I come back later','my choice is remembered']],
+   note:'Bugs have nowhere to hide in either.'},
+  {id:'US-16', e:'E4', t:'Phones', as:'recruiter on the move', want:'the site to work on my phone', so:'I can shortlist him from a cab', p:'Must', pts:5,
+   ac:[['Layout','I am on a small screen','I open any app','it fills the screen and stays readable'],['Mascot','I am on a phone','the desktop loads','Glitch waits in the taskbar instead of chasing a cursor that isn’t there']],
+   note:'Tested on screens smaller than his coffee mug.'},
+  {id:'US-17', e:'E4', t:'Keyboard', as:'keyboard user', want:'to use the whole site without a mouse', so:'my trackpad can take the day off', p:'Must', pts:3,
+   ac:[['Move','I am on the desktop','I press Tab','focus moves and I can see where it is'],['Open','something is focused','I press Enter','it opens'],['Close','a window or menu is open','I press Esc','it closes']],
+   note:'Every button has a label a screen reader can read out.'},
+  {id:'US-18', e:'E4', t:'Reduced motion', as:'visitor who prefers less motion', want:'animation to calm down when my device asks', so:'nothing on screen makes me dizzy', p:'Must', pts:1,
+   ac:[['Respect settings','my device has reduced motion on','I open the site','the boot screen, animations and Glitch’s walking are switched off']],
+   note:'Glitch stands very still. It is harder for him than it looks.'},
+  {id:'US-19', e:'E4', t:'Open in a real browser', as:'recruiter tapping a link inside LinkedIn', want:'a nudge to open it in a real browser', so:'I see the full desktop, not a squeezed one', p:'Should', pts:2,
+   ac:[['Detect','I open the link in an app’s built-in browser','the desktop loads','a notice explains how to open it properly'],['Dismiss','the notice is showing','I press Copy Link or Continue Here','it goes away for this visit']],
+   note:'Shown once. Nagging is not a feature.'},
+  {id:'US-20', e:'E5', t:'Glitch, the mascot', as:'visitor', want:'a small companion with opinions', so:'exploring a CV feels less like reading one', p:'Could', pts:5,
+   ac:[['Follow','I am on a laptop','I move the cursor','Glitch follows at a polite distance'],['Comment','Glitch is visible','I hover over an app','it makes a remark, at most every few seconds'],['Dismiss','Glitch is visible','I press its ×','it moves to the Recycle Bin, where I can restore it']],
+   note:'The only bug that made it to production. He is still looking for it.'},
+  {id:'US-21', e:'E5', t:'Task Manager', as:'curious visitor', want:'to see what is running in his head', so:'I understand how he works', p:'Could', pts:2,
+   ac:[['Live','I open Task Manager','it is open','the processes update every few seconds'],['End task','a process is selected','I press End Task','it refuses, politely']],
+   note:'Excuses.exe has never been observed running.'},
+  {id:'US-22', e:'E5', t:'Recycle Bin', as:'curious visitor', want:'to see what he has thrown away', so:'I learn what he stopped doing', p:'Could', pts:1,
+   ac:[['Browse','I open the Recycle Bin','it loads','I see each deleted item and why'],['Empty','the bin is open','I press Empty Recycle Bin','it refuses to delete the lessons']],
+   note:'“It works on my machine” was deleted years ago.'},
+  {id:'US-23', e:'E5', t:'Taskbar tray', as:'visitor', want:'a coffee meter, network icon and clock', so:'the desktop feels alive', p:'Could', pts:1,
+   ac:[['Coffee','time passes','I watch the meter','his coffee level slowly drops'],['Refill','the meter is low','I click it','it refills to 100%'],['Time','I want to call him','I click the clock','I see his time in Jaipur']],
+   note:'Please keep the coffee above 20%.'},
+  {id:'US-24', e:'E5', t:'Power button', as:'visitor looking for the exit', want:'a power button', so:'I can try to leave', p:'Could', pts:1,
+   ac:[['Shut down','the Start menu is open','I press Power','a blue screen explains he can’t shut down'],['Restart','the blue screen is showing','I press Restart','the desktop comes back']],
+   note:'The only blue screen that was designed on purpose.'}
+];
+
+function storySentence(s){ return 'As a <b>' + s.as + '</b>, I want ' + s.want + ', so that ' + s.so + '.'; }
+
+function renderBoard(){
+  var board = $('#usboard'); if (!board) return;
+  var html = '';
+  EPICS.forEach(function(ep){
+    var list = STORIES.filter(function(s){ return s.e === ep.id; });
+    var pts = list.reduce(function(a, s){ return a + s.pts; }, 0);
+    html += '<h3 class="us-epic"><span>' + ep.id + ' · ' + ep.name + '</span><small>' + list.length + ' stories · ' + pts + ' pts · Done</small></h3>';
+    list.forEach(function(s, i){
+      html += '<button type="button" class="sticky ' + ep.c + '" style="--r:' + (i % 2 ? '.8deg' : '-.8deg') + '" data-story="' + s.id + '">' +
+        '<span class="id">' + s.id + ' · ' + s.t + '</span>' +
+        '<p>' + storySentence(s) + '</p>' +
+        '<span class="us-meta"><i class="pri ' + s.p.toLowerCase() + '">' + s.p + '</i><i>' + s.pts + ' pts</i><i class="done">Done</i></span></button>';
+    });
+  });
+  html += '<h3 class="us-epic"><span>Next · Version 2.0 projects</span><small>Under construction</small></h3>' +
+    '<div class="sticky s5 next" style="--r:1deg"><span class="id">Next · Under construction</span><p>Stories for the next Version 2.0 projects are being written now.</p>' +
+    '<span class="us-meta"><i>Backlog</i></span></div>';
+  board.innerHTML = html;
+  var total = STORIES.reduce(function(a, s){ return a + s.pts; }, 0);
+  $('#uscount').textContent = STORIES.length + ' stories · ' + EPICS.length + ' epics · ' + total + ' points';
+}
+
+function openStory(id){
+  var s = STORIES.filter(function(x){ return x.id === id; })[0]; if (!s) return;
+  var ep = EPICS.filter(function(e){ return e.id === s.e; })[0];
+  var d = $('#usdetail');
+  d.innerHTML = '<div class="usd-top"><span class="id">' + s.id + ' · ' + ep.name + '</span><button type="button" class="usd-x" id="usclose" aria-label="Close story">×</button></div>' +
+    '<h3>' + s.t + '</h3>' +
+    '<div class="us-meta"><i class="pri ' + s.p.toLowerCase() + '">' + s.p + ' have</i><i>' + s.pts + ' story points</i><i class="done">Done</i></div>' +
+    '<div class="usd-block"><div class="lbl">User story</div><p>' + storySentence(s) + '</p></div>' +
+    '<div class="usd-block"><div class="lbl">Acceptance criteria</div>' + s.ac.map(function(a, i){
+      return '<div class="scn"><b>Scenario ' + (i + 1) + ': ' + a[0] + '</b><ul class="gwt"><li><b>Given</b> ' + a[1] + '</li><li><b>When</b> ' + a[2] + '</li><li><b>Then</b> ' + a[3] + '</li></ul></div>';
+    }).join('') + '</div>' +
+    '<p class="usd-note">' + s.note + '</p>';
+  $('#uswrap').classList.add('detail-open');
+  d.hidden = false;
+  $$('#usboard [data-story]').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-story') === id ? 'true' : 'false'); });
+  quest('story');
+  $('#usclose').addEventListener('click', closeStory);
+  $('#usclose').focus();
+}
+function closeStory(){
+  $('#uswrap').classList.remove('detail-open'); $('#usdetail').hidden = true;
+  var b = $('#usboard [aria-pressed="true"]'); if (b){ b.setAttribute('aria-pressed','false'); b.focus(); }
+}
+
+/* ---------- User Guide: quests, tour, link chips, easter eggs ---------- */
+var QUESTS = [
+  {id:'project', t:'Open a shipped project', hint:'Projects, then the Portfolio Sites folder'},
+  {id:'story', t:'Read a user story in full', hint:'User stories, then click any sticky'},
+  {id:'theme', t:'Switch to the other theme', hint:'The Dark or Light button in the taskbar'},
+  {id:'search', t:'Check one of his skills', hint:'Start menu, then type “LLM”'},
+  {id:'glitch', t:'Poke Glitch', hint:'Click the small bug'},
+  {id:'rightclick', t:'Find the secret menu', hint:'Right-click empty desktop'}
+];
+var questDone = {};
+try { questDone = JSON.parse(sessionStorage.getItem('sos-quests') || '{}') || {}; } catch(e){ questDone = {}; }
+function renderQuests(){
+  var ul = $('#quests'); if (!ul) return;
+  var n = 0;
+  ul.innerHTML = QUESTS.map(function(q){
+    var ok = !!questDone[q.id]; if (ok) n++;
+    return '<li class="' + (ok ? 'ok' : '') + '"><span class="qchk" aria-hidden="true">' + (ok ? '✓' : '') + '</span><span><b>' + q.t + '</b><small>' + (ok ? 'Done' : q.hint) + '</small></span></li>';
+  }).join('');
+  $('#qcount').textContent = n + ' of ' + QUESTS.length;
+  $('#qbar').style.width = Math.round(n / QUESTS.length * 100) + '%';
+}
+function quest(id){
+  if (questDone[id] || !QUESTS.some(function(q){ return q.id === id; })) return;
+  questDone[id] = true;
+  try { sessionStorage.setItem('sos-quests', JSON.stringify(questDone)); } catch(e){}
+  renderQuests();
+  var n = QUESTS.filter(function(q){ return questDone[q.id]; }).length;
+  if (n === QUESTS.length) toast('info','All quests done','You now know this desktop better than most IT departments. Glitch is impressed, quietly.');
+  else toast('info','Quest complete', QUESTS.filter(function(q){ return q.id === id; })[0].t + '. ' + n + ' of ' + QUESTS.length + ' done.', null, 3500);
+}
+
+/* guided tour, narrated by Glitch */
+var TOUR = [
+  {sel:'.widget', t:'This is him', b:'Photo, role and availability. If you only have five seconds, this card is the whole pitch.'},
+  {sel:'#icons', t:'Everything lives here', b:'Every app is one click away. No double-clicking. This is not 2003.'},
+  {sel:'#startbtn', t:'The Start menu', b:'Type a skill to check whether he has it. Try “LLM”. Spoiler: yes.'},
+  {sel:'#tbmid', t:'Open apps', b:'Anything you open shows up down here. Click an icon to bring it forward or tuck it away.'},
+  {sel:'#themebtn', t:'Light or dark', b:'Pick your side. Bugs have nowhere to hide in either.'},
+  {sel:'#coffee', t:'His coffee level', b:'It drops over time. Click to refill. Please keep it above 20%.'},
+  {sel:'#glitch .g-body', t:'And me', b:'I’m Glitch, the only bug he missed. I follow you around. It’s not personal, it’s my job.'},
+  {sel:null, t:'That’s the tour', b:'You now know more than most onboarding documents. The CV is still open, by the way.'}
+];
+var tourI = 0;
+function visible(el){ if (!el) return false; var r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0 && getComputedStyle(el).visibility !== 'hidden' && !el.closest('[hidden]'); }
+function tourSteps(){ return TOUR.filter(function(s){ return !s.sel || visible($(s.sel)); }); }
+function startTour(){
+  closeStart();
+  var g = $('#w-guide'); if (g && !g.hidden) minWin('guide');
+  tourI = 0; $('#tour').hidden = false; showStep();
+}
+function endTour(){ $('#tour').hidden = true; if (state.guide && state.guide.min) openWin('guide'); quest('tour'); }
+function showStep(){
+  var steps = tourSteps(), s = steps[tourI], spot = $('#tour-spot'), card = $('#tour-card');
+  $('#tour-t').textContent = s.t; $('#tour-b').textContent = s.b;
+  $('#tour-n').textContent = (tourI + 1) + ' of ' + steps.length;
+  $('#tour-back').disabled = tourI === 0;
+  $('#tour-next').textContent = tourI === steps.length - 1 ? 'Finish' : 'Next';
+  var el = s.sel && $(s.sel);
+  if (el){
+    var r = el.getBoundingClientRect(), pad = 8;
+    spot.hidden = false;
+    spot.style.left = (r.left - pad) + 'px'; spot.style.top = (r.top - pad) + 'px';
+    spot.style.width = (r.width + pad * 2) + 'px'; spot.style.height = (r.height + pad * 2) + 'px';
+    var cw = Math.min(320, innerWidth - 24), ch = card.offsetHeight || 170;
+    var x = Math.min(Math.max(12, r.left), innerWidth - cw - 12);
+    var y = r.bottom + 16;
+    if (y + ch > innerHeight - 12) y = Math.max(12, r.top - ch - 16);
+    card.style.left = x + 'px'; card.style.top = y + 'px'; card.classList.remove('center');
+  } else {
+    spot.hidden = true; card.style.left = ''; card.style.top = ''; card.classList.add('center');
+  }
+  $('#tour-next').focus();
+}
+function tourNext(){ var n = tourSteps().length; if (tourI < n - 1){ tourI++; showStep(); } else endTour(); }
+function tourBack(){ if (tourI > 0){ tourI--; showStep(); } }
+
+function wireGuide(){
+  renderQuests();
+  $('#tourbtn').addEventListener('click', startTour);
+  $('#tour-next').addEventListener('click', tourNext);
+  $('#tour-back').addEventListener('click', tourBack);
+  $('#tour-skip').addEventListener('click', endTour);
+  document.addEventListener('keydown', function(e){
+    if ($('#tour').hidden) return;
+    if (e.key === 'Escape'){ e.stopImmediatePropagation(); endTour(); }
+    else if (e.key === 'ArrowRight'){ tourNext(); }
+    else if (e.key === 'ArrowLeft'){ tourBack(); }
+  }, true);
+  addEventListener('resize', function(){ if (!$('#tour').hidden) showStep(); });
+  $$('.lchip').forEach(function(c){
+    c.addEventListener('click', function(){
+      var url = location.href.split('#')[0] + c.getAttribute('data-hash');
+      try { navigator.clipboard.writeText(url).then(function(){ toast('info','Link copied', 'Anyone who opens it lands on ' + c.getAttribute('data-name') + '.', null, 3000); }, function(){ toast('info','Copy this link', url, null, 6000); }); } catch(err){ toast('info','Copy this link', url, null, 6000); }
+    });
+  });
+  $$('.egg').forEach(function(b){
+    b.addEventListener('click', function(){ b.classList.add('open'); b.setAttribute('aria-expanded','true'); });
+  });
+}
+
+  /* ---------- boot ---------- */
+  renderBoard(); wireGuide();
+  $('#usboard').addEventListener('click', function(e){ var b = e.target.closest('[data-story]'); if (b) openStory(b.getAttribute('data-story')); });
+  var bootEl = $('#boot');
+  var LINES = ['Starting SudhanshOS…','Loading edge cases…','Rejecting “it works on my machine”…','Writing acceptance criteria for the boot screen…','Ready'];
+  function boot(again){
+    var seen = false; try { seen = sessionStorage.getItem('sos-booted') === '1'; sessionStorage.setItem('sos-booted','1'); } catch(e){}
+    if (reduce || (seen && !again)){ bootEl.hidden = true; afterBoot(again); return; }
+    bootEl.hidden = false; var i = 0, done = false;
+    var msg = $('#bootmsg'); msg.textContent = LINES[0];
+    var iv = setInterval(function(){ i++; if (i < LINES.length) msg.textContent = LINES[i]; }, 380);
+    function finish(){ if (done) return; done = true; clearInterval(iv); bootEl.hidden = true; afterBoot(again); }
+    setTimeout(finish, 1900);
+    bootEl.onclick = finish;
+  }
+  var DEEP = {cv:'notepad', projects:'explorer', stories:'stickies', about:'settings', mail:'mail', contact:'mail', guide:'guide', help:'guide'};
+  /* ---------- open-in-browser / best-on-laptop notice ---------- */
+  function webTip(){
+    var seen = false; try { seen = sessionStorage.getItem('sos-webtip') === '1'; } catch(e){}
+    if (seen) return;
+    var ua = navigator.userAgent || '';
+    var inApp = /FBAN|FBAV|Instagram|LinkedInApp|Line\/|Twitter|MicroMessenger|Snapchat|; wv\)/i.test(ua);
+    var small = innerWidth <= 700;
+    if (!inApp && !small) return;
+    var tip = $('#webtip');
+    if (inApp){
+      $('#webtip-h').textContent = 'Open in your browser';
+      $('#webtip-p').textContent = 'You’re in an app’s built-in browser, which squeezes the desktop. Tap the menu (⋯ or ⋮) and choose Open in browser, or copy the link.';
+    }
+    tip.hidden = false;
+    function done(){ tip.hidden = true; try { sessionStorage.setItem('sos-webtip','1'); } catch(e){} }
+    $('#wt-ok').onclick = done;
+    $('#wt-copy').onclick = function(){
+      var url = location.href.split('#')[0], b = this;
+      try { navigator.clipboard.writeText(url).then(function(){ b.textContent = 'Copied'; setTimeout(done, 900); }, function(){ b.textContent = url; }); } catch(e){ b.textContent = url; }
+    };
+  }
+
+  /* ---------- Glitch, the mascot ---------- */
+  var G = (function(){
+    var el = $('#glitch'), bub = $('#gbubble'), body = $('#gbody');
+    var finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+    var pos = {x: innerWidth - 140, y: innerHeight - 170}, target = {x: pos.x, y: pos.y};
+    var lastMove = Date.now(), lastSay = 0, lastLine = '', hideT, asleep = false, running = false, lastPt = null, fastCool = 0;
+    var LINES = {
+      notepad:['Read the summary. The rest is proof.','That CV has been tested twice. I checked.'],
+      explorer:['Projects. Actual proof, not adjectives.','More folders are coming. He keeps shipping things.'],
+      stickies:['Every feature has a user story. Even me.','Given you read these, then you’ll hire him.'],
+      mail:['He replies. I’ve been waiting 3 years for a reply.','Write to him. I’ll watch.'],
+      bin:['Please don’t. My family is in there.','Everything in there was tested first.'],
+      taskmgr:['Don’t end Coffee.exe. I’ve seen what happens.','Excuses.exe has never run. Believe me, I tried.'],
+      settings:['Specs are accurate. I would know, I read everything.'],
+      guide:['The guide is short. So is my patience.'],
+      start:['Search works. Try typing “LLM”.'],
+      coffee:['Refill it. He gets thorough when caffeinated.'],
+      click:['I’m the only bug that made it to production. He’s still looking for me.','Hi. I’m Glitch. I’m technically a defect.','Click me again and I’ll log it as a bug. Ironic.','He found every other bug. I hide well.']
+    };
+    function say(t, ms){
+      if (!t) return;
+      lastSay = Date.now(); lastLine = t;
+      bub.textContent = t; bub.classList.add('on');
+      clearTimeout(hideT); hideT = setTimeout(function(){ bub.classList.remove('on'); }, ms || 3800);
+    }
+    function pick(k){ var a = LINES[k] || []; var c = a.filter(function(x){ return x !== lastLine; }); return c[Math.floor(Math.random() * c.length)] || a[0]; }
+    function place(){ el.style.transform = 'translate(' + Math.round(pos.x) + 'px,' + Math.round(pos.y) + 'px)'; var docked = el.classList.contains('docked') && !finePointer; el.classList.toggle('flip', !docked && pos.x > innerWidth - 280); bub.style.left = docked ? (12 - Math.round(pos.x)) + 'px' : ''; bub.style.maxWidth = docked ? (innerWidth - 24) + 'px' : ''; }
+    function tick(){
+      var dx = target.x - pos.x, dy = target.y - pos.y, d = Math.hypot(dx, dy);
+      if (d > 1){ pos.x += dx * .08; pos.y += dy * .08; el.classList.add('walk'); } else el.classList.remove('walk');
+      place();
+      if (!asleep && Date.now() - lastMove > 30000){ asleep = true; el.classList.add('sleep'); say('zzz… waiting for a recruiter.', 6000); }
+      if (running) requestAnimationFrame(tick);
+    }
+    function wake(){ if (asleep){ asleep = false; el.classList.remove('sleep'); } lastMove = Date.now(); }
+    function onMove(e){
+      wake();
+      var now = Date.now();
+      if (lastPt){ var v = Math.hypot(e.clientX - lastPt.x, e.clientY - lastPt.y) / Math.max(1, now - lastPt.t); if (v > 4 && now > fastCool){ fastCool = now + 20000; say('Slow down. This isn’t a load test.'); } }
+      lastPt = {x:e.clientX, y:e.clientY, t:now};
+      var gx = pos.x + 23, gy = pos.y + 23;
+      if (Math.hypot(e.clientX - gx, e.clientY - gy) > 150){
+        target.x = Math.min(innerWidth - 60, Math.max(8, e.clientX + 26));
+        target.y = Math.min(innerHeight - 110, Math.max(8, e.clientY + 22));
+      }
+    }
+    function onOver(e){
+      if (Date.now() - lastSay < 6000) return;
+      var t = e.target.closest('[data-open],#startbtn,#coffee,.tbtn');
+      if (!t) return;
+      var k = t.getAttribute('data-open') || t.getAttribute('data-app') || (t.id === 'startbtn' ? 'start' : t.id === 'coffee' ? 'coffee' : (t.id || '').replace('tb-',''));
+      if (LINES[k]) say(pick(k));
+    }
+    function dock(){
+      var tb = $('#taskbar').getBoundingClientRect();
+      el.classList.add('docked');
+      pos.x = finePointer ? 16 : Math.round(innerWidth * 0.42); pos.y = finePointer ? innerHeight - 170 : tb.top + 6;
+      target.x = pos.x; target.y = pos.y; place();
+    }
+    function show(){
+      el.hidden = false;
+      if (!finePointer || reduce){ dock(); return; }
+      if (!running){ running = true; document.addEventListener('pointermove', onMove, {passive:true}); document.addEventListener('mouseover', onOver); requestAnimationFrame(tick); }
+    }
+    function hide(){
+      el.hidden = true; running = false;
+      document.removeEventListener('pointermove', onMove); document.removeEventListener('mouseover', onOver);
+    }
+    body.addEventListener('click', function(){ wake(); say(pick('click'), 4500); quest('glitch'); });
+    $('#gclose').addEventListener('click', function(){
+      say('Fine. I’ll be in the Recycle Bin.', 1500);
+      setTimeout(function(){ hide(); binRow(true); }, 1200);
+      try { sessionStorage.setItem('sos-glitch','off'); } catch(e){}
+    });
+    function binRow(on){
+      var row = $('#glitchrow');
+      if (on && !row){
+        row = document.createElement('tr'); row.id = 'glitchrow';
+        row.innerHTML = '<td>glitch.exe</td><td>Just now</td><td>Sulking. <button type="button" class="btn sec" id="restoreglitch">Restore</button></td>';
+        $('#binrows').appendChild(row);
+        $('#restoreglitch').addEventListener('click', function(){ binRow(false); try { sessionStorage.removeItem('sos-glitch'); } catch(e){} show(); say('I’m back. Did you miss me? Don’t answer.'); });
+      } else if (!on && row) row.remove();
+    }
+    function start(){
+      var off = false; try { off = sessionStorage.getItem('sos-glitch') === 'off'; } catch(e){}
+      if (off){ binRow(true); return; }
+      show();
+      setTimeout(function(){ say('Hi. I’m Glitch, the only bug he missed. Click me if you’re bored.', 5000); }, 1400);
+    }
+    addEventListener('resize', function(){ if (el.classList.contains('docked')){ if (!el.hidden) dock(); return; } pos.x = Math.min(pos.x, innerWidth - 60); pos.y = Math.min(pos.y, innerHeight - 110); target.x = pos.x; target.y = pos.y; if (!el.hidden) place(); });
+    return {start:start};
+  })();
+
+  function afterBoot(again){
+    if (!again){ webTip(); G.start(); }
+    if (!again){
+      var h = (location.hash || '').slice(1).toLowerCase();
+      if (DEEP[h]){ if (innerWidth > 900 && h !== 'cv') openWin('notepad'); openWin(DEEP[h]); if (h === 'projects') renderExplorer('portfolio'); }
+      else { openWin('notepad'); if (innerWidth > 900){ openWin('explorer'); openWin('notepad'); } }
+    }
+    if (!again && DEEP[(location.hash || '').slice(1).toLowerCase()] && innerWidth <= 700) return;
+    if (!again && !$('#webtip').hidden) return;
+    setTimeout(function(){
+      if (again) toast('info','Welcome back','Restarted in record time. No updates were installed against your will.');
+      else toast('info','Welcome to SudhanshOS','His CV is already open. New here? The User Guide explains the rest in a minute.',[{label:'Open Guide', fn:function(){ openWin('guide'); }}], 9000);
+    }, 400);
+    if (!again) setTimeout(function(){
+      toast('info','Update available: Sudhansh 2.0','Portfolio Sites just shipped. More Version 2.0 projects are on the way.',[{label:'Show Me', fn:function(){ openWin('explorer'); renderExplorer('portfolio'); }},{label:'Remind Me Never', sec:true, fn:function(){ toast('info','Noted','He’ll ask again. QA people always do.'); }}], 12000);
+    }, 9000);
+  }
+  boot(false);
+})();
+</script>
+</body>
+</html>
